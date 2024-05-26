@@ -58,6 +58,7 @@
   font-size: 25px;
   border: 2px solid #727454;
   outline: #727454;
+  padding: 10px 20px;
 }
 .login-page .login-container .login-form__input:focus {
   outline: none;

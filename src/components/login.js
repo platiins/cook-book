@@ -16,7 +16,7 @@ function Login() {
 
   const handleLogin = (event) => {
     event.preventDefault();
-    if (username === "admin" && password === "0000") {
+    if (username === "foodLover666" && password === "0000") {
       setIsLoggedIn(true);
       setError("");
     } else {
@@ -68,7 +68,7 @@ function Login() {
             </Form.Group>
             <Button className="login-btn" variant="dark" type="submit">
               LOGIN
-              <FaCookieBite className="login-icon"/>
+              <FaCookieBite className="login-icon" />
             </Button>
             {error && <div>{error}</div>}
           </Form>
