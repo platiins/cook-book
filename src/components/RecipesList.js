@@ -1,6 +1,8 @@
 import RecipeCard from "./RecipeCard";
 import Button from "react-bootstrap/esm/Button";
 import { useState, useEffect } from "react";
+import { FaBowlFood } from "react-icons/fa6";
+import "../styles/styles.scss";
 
 function RecipesList({ handleLogout }) {
   const [selectedCardGroup, setSelectedCardGroup] = useState("All");
@@ -39,8 +41,8 @@ function RecipesList({ handleLogout }) {
       : selectedCards.filter((recipe) => recipe.cuisine === selectedCardGroup);
 
   return (
-    <div>
-      <div id="buttons">
+    <div className="recipes-page">
+      <div className="filter-btns-container mt-5" id="buttons">
         {[
           "All",
           "Italian",
@@ -51,13 +53,19 @@ function RecipesList({ handleLogout }) {
           "Indian",
           "Turkish",
         ].map((cuisine) => (
-          <Button key={cuisine} onClick={() => handleGroupFilterClick(cuisine)}>
-            {cuisine}
+          <Button
+            className="filter-btns"
+            id={cuisine}
+            key={cuisine}
+            onClick={() => handleGroupFilterClick(cuisine)}
+          >
+            <FaBowlFood className="filter-btns__icon" />
+            {cuisine.toLocaleUpperCase()}
           </Button>
         ))}
       </div>
       {error && <div className="text-danger">Error</div>}
-      <ul className="d-flex flex-wrap m-2 gap-3  list-unstyled">
+      <ul className="recipes-list">
         {filteredCards.map((recipe) => {
           return (
             <li key={recipe.id}>

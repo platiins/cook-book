@@ -11,7 +11,7 @@ function RecipeCard({ recipe }) {
     <Card className="recipe-card">
       <Card.Body>
         <ListGroup.Item>
-          <div>Cooking Time: {recipe.cookingTimeMinutes}</div>
+          <div>Cooking Time: {recipe.cookTimeMinutes}</div>
           <div>Servings: {recipe.servings}</div>
         </ListGroup.Item>
         <Card.Img variant="top" src={recipe.image} />
@@ -31,7 +31,7 @@ function RecipeCard({ recipe }) {
 }
 
 RecipeCard.propTypes = {
-  cookingTimeMinutes: PropTypes.number,
+  cookTimeMinutes: PropTypes.number,
   servings: PropTypes.number,
   name: PropTypes.string,
   difficulty: PropTypes.string,
