@@ -2,6 +2,8 @@ import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
 import Button from "react-bootstrap/esm/Button";
 
+import PropTypes from "prop-types";
+
 import "../styles/styles.scss";
 
 function RecipeCard({ recipe }) {
@@ -27,5 +29,14 @@ function RecipeCard({ recipe }) {
     </Card>
   );
 }
+
+RecipeCard.propTypes = {
+  cookingTimeMinutes: PropTypes.number,
+  servings: PropTypes.number,
+  name: PropTypes.string,
+  difficulty: PropTypes.string,
+  cuisine: PropTypes.string,
+  caloriesPerServing: PropTypes.number,
+};
 
 export default RecipeCard;

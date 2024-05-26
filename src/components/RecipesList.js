@@ -2,16 +2,14 @@ import RecipeCard from "./RecipeCard";
 import Button from "react-bootstrap/esm/Button";
 import { useState, useEffect } from "react";
 
-function RecipesList() {
-  const [selectedCardGroup, setSelectedCardGroup] = useState("all");
+function RecipesList({ handleLogout }) {
+  const [selectedCardGroup, setSelectedCardGroup] = useState("All");
   const [counter, setCounter] = useState(0);
   const [selectedCards, setSelectedCards] = useState([]);
   const [error, setError] = useState(null);
 
   const handleGroupFilterClick = (cuisine) => {
-    console.log(cuisine);
     setCounter((prevValue) => {
-      console.log(prevValue);
       return prevValue + 1;
     });
     setSelectedCardGroup(cuisine);
@@ -35,19 +33,24 @@ function RecipesList() {
       });
   }, []);
 
-  useEffect(() => {
-    console.log("Selected Card Group Effect");
-  }, [selectedCardGroup]);
-
   const filteredCards =
-    selectedCardGroup === "all"
+    selectedCardGroup === "All"
       ? selectedCards
       : selectedCards.filter((recipe) => recipe.cuisine === selectedCardGroup);
 
   return (
     <div>
       <div id="buttons">
-        {["all", "Italian", "Pakistani", "American"].map((cuisine) => (
+        {[
+          "All",
+          "Italian",
+          "Pakistani",
+          "Asian",
+          "Mexican",
+          "Japanese",
+          "Indian",
+          "Turkish",
+        ].map((cuisine) => (
           <Button key={cuisine} onClick={() => handleGroupFilterClick(cuisine)}>
             {cuisine}
           </Button>

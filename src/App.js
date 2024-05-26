@@ -1,9 +1,9 @@
-import RecipesList from "./components/RecipesList";
+import Login from "./components/login";
 
 function App() {
   return (
     <div>
-      <RecipesList />
+      <Login />
     </div>
   );
 }
