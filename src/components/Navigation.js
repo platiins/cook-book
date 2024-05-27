@@ -2,7 +2,6 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 
-import { PiCookingPotBold } from "react-icons/pi";
 import "../styles/styles.scss";
 
 function Navigation() {

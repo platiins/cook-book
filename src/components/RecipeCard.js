@@ -2,30 +2,66 @@ import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
 import Button from "react-bootstrap/esm/Button";
 
+import { IoIosTime } from "react-icons/io";
+import { IoPersonSharp } from "react-icons/io5";
+import { BiShow } from "react-icons/bi";
+import { FaGlobeAmericas } from "react-icons/fa";
+import { HiMiniBolt } from "react-icons/hi2";
+
 import PropTypes from "prop-types";
 
 import "../styles/styles.scss";
+import IngredBtn from "./IngredBtn";
 
 function RecipeCard({ recipe }) {
   return (
     <Card className="recipe-card">
-      <Card.Body>
-        <ListGroup.Item>
-          <div>Cooking Time: {recipe.cookTimeMinutes}</div>
-          <div>Servings: {recipe.servings}</div>
+      <Card.Body className="recipe-card__container">
+        <ListGroup.Item className="cooking-serving">
+          <div className="cooking-serving__box">
+            <IoIosTime className="recipe-card-icon" />
+            {recipe.cookTimeMinutes} min
+          </div>
+          <div className="cooking-serving__box">
+            {recipe.servings}
+            <IoPersonSharp className="recipe-card-icon" />
+          </div>
         </ListGroup.Item>
-        <Card.Img variant="top" src={recipe.image} />
-        <Card.Title>{recipe.name}</Card.Title>
-        <Button variant="primary">ingredients</Button>
-        <Button variant="primary">instructions</Button>
+        <Card.Img
+          className="recipe-card__container--img"
+          variant="top"
+          src={recipe.image}
+        />
+        <Card.Title className="recipe-card__container--title">
+          {recipe.name.toLocaleUpperCase()}
+        </Card.Title>
+        <div className="btns-container">
+          <IngredBtn
+            allIngred={recipe.ingredients.map((ingredient) => (
+              <li>{ingredient}</li>
+            ))}
+          />
+          <Button
+            className="recipe-card__container--btn btn-instructions"
+            variant="light"
+          >
+            <BiShow className="recipe-btn-icon" />
+          </Button>
+        </div>
+
+        <ListGroup.Item className="recipe-card__details">
+          <section>
+            <HiMiniBolt className="mb-2" /> {recipe.difficulty}
+          </section>
+          <section>
+            <p>kcal</p>
+            {recipe.caloriesPerServing}
+          </section>
+          <section>
+            <FaGlobeAmericas className="mb-2" /> {recipe.cuisine}
+          </section>
+        </ListGroup.Item>
       </Card.Body>
-      <ListGroup className="list-group-flush">
-        <ListGroup.Item>Difficulty: {recipe.difficulty}</ListGroup.Item>
-        <ListGroup.Item>Cuisine: {recipe.cuisine}</ListGroup.Item>
-        <ListGroup.Item>
-          Calories Per Serving: {recipe.caloriesPerServing} kcal
-        </ListGroup.Item>
-      </ListGroup>
     </Card>
   );
 }

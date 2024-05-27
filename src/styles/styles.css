@@ -106,10 +106,11 @@
     transform: rotate(360deg);
   }
 }
-.login-page .recipes-page {
+
+.recipes-page {
   width: 100vw;
   height: 100vh;
-  background-color: #ebe3d3;
+  background-color: #e8e4dc;
   background-image: none;
   padding-top: 50px;
   overflow-x: hidden;
@@ -117,7 +118,7 @@
   flex-flow: column;
   align-items: center;
 }
-.login-page .recipes-page .filter-btns-container {
+.recipes-page .filter-btns-container {
   display: flex;
   gap: 20px;
   row-gap: 50px;
@@ -125,16 +126,16 @@
   justify-content: space-evenly;
   width: 80%;
 }
-.login-page .recipes-page .filter-btns-container #Asian,
-.login-page .recipes-page .filter-btns-container #Italian,
-.login-page .recipes-page .filter-btns-container #Pakistani,
-.login-page .recipes-page .filter-btns-container #Mexican,
-.login-page .recipes-page .filter-btns-container #Japanese,
-.login-page .recipes-page .filter-btns-container #Indian,
-.login-page .recipes-page .filter-btns-container #Turkish {
+.recipes-page .filter-btns-container #Asian,
+.recipes-page .filter-btns-container #Italian,
+.recipes-page .filter-btns-container #Pakistani,
+.recipes-page .filter-btns-container #Mexican,
+.recipes-page .filter-btns-container #Japanese,
+.recipes-page .filter-btns-container #Indian,
+.recipes-page .filter-btns-container #Turkish {
   color: #212529;
 }
-.login-page .recipes-page .filter-btns-container .filter-btns {
+.recipes-page .filter-btns-container .filter-btns {
   width: 15%;
   min-width: 100px;
   font-size: 25px;
@@ -148,15 +149,15 @@
   border: none;
   color: #727454;
 }
-.login-page .recipes-page .filter-btns-container .filter-btns:hover .filter-btns__icon {
+.recipes-page .filter-btns-container .filter-btns:hover .filter-btns__icon {
   transform: scale(1.5);
-  color: #727454;
+  color: #b4b093;
   transition-duration: 700ms;
 }
-.login-page .recipes-page .filter-btns-container .filter-btns .filter-btns__icon {
+.recipes-page .filter-btns-container .filter-btns .filter-btns__icon {
   transition-duration: 1200ms;
 }
-.login-page .recipes-page .recipes-list {
+.recipes-page .recipes-list {
   display: flex;
   justify-content: center;
   list-style: none;
@@ -167,7 +168,91 @@
   row-gap: 50px;
   margin-top: 50px;
 }
-.login-page .logout-btn {
+
+.recipe-card {
+  background-color: #b4b093;
+  border: solid 3px #47482f;
+}
+.recipe-card__container {
+  font-size: 22px;
+  font-family: "Overpass", sans-serif;
+  color: #47482f;
+}
+.recipe-card__container .cooking-serving {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.recipe-card__container .cooking-serving .cooking-serving__box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.recipe-card__container .recipe-card-icon {
+  font-size: 30px;
+  margin: 0 5px;
+  padding-bottom: 5px;
+}
+.recipe-card__container--title {
+  text-align: center;
+  font-family: "Gloria Hallelujah", cursive;
+  font-size: 25px;
+  margin: 20px 10px;
+  text-wrap: balance;
+  vertical-align: middle;
+  align-content: center;
+  height: 70px;
+  color: #212529;
+}
+.recipe-card__container--img {
+  margin-top: 10px;
+  border-radius: 0;
+  border: solid 3px #47482f;
+  height: 250px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.recipe-card__container .btns-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.recipe-card__container--btn {
+  background-color: #b4b093;
+  color: #47482f;
+  font-size: 20px;
+  border: #47482f solid 3px;
+  border-radius: 0;
+  margin: 0 5px;
+  width: 40%;
+}
+.recipe-card__container--btn:hover {
+  opacity: 0.5;
+}
+.recipe-card__container--btn .recipe-btn-icon {
+  padding: 3px;
+  font-size: 30px;
+}
+.recipe-card__details {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 15px;
+  padding: 5px 10px;
+}
+.recipe-card__details section {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+}
+.recipe-card__details section p {
+  margin: 0;
+}
+
+.logout-btn {
   width: 100px;
   position: absolute;
   top: 10px;
@@ -179,7 +264,7 @@
   font-size: 30px;
   border: none;
 }
-.login-page .logout-btn:hover {
+.logout-btn:hover {
   animation: float 1500ms linear infinite;
 }
 @keyframes float {
@@ -193,25 +278,36 @@
     transform: translateX(0);
   }
 }
-.login-page .main-nav {
+
+.main-nav {
   position: fixed;
   padding: 10px 150px 10px 10px;
   width: 100vw;
   z-index: 1;
   background-color: #47482f;
 }
-.login-page .main-nav__container {
+.main-nav__container {
   padding-left: 0;
 }
-.login-page .main-nav .home-icon {
+.main-nav .home-icon {
   font-family: "Gloria Hallelujah", cursive;
   font-size: 2.5rem;
   width: 300px;
   color: #ebe3d3;
 }
-.login-page .main-nav .nav-link {
+.main-nav .nav-link {
   font-size: 20px;
   font-family: "Overpass", sans-serif;
   color: #ebe3d3;
   margin-right: 5rem;
+}
+
+.popup {
+  position: "fixed";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: 1000;
 }/*# sourceMappingURL=styles.css.map */
