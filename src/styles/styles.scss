@@ -12,8 +12,14 @@
 
 @font-face {
   font-family: "Overpass";
-  src: url(../fonts/Overpass/static/Overpass-Regular.ttf);
+  src: url(../fonts/Overpass/static/Overpass-Regular.ttf) format(truetype);
   font-weight: 400;
+}
+
+@font-face {
+  font-family: "Overpass";
+  src: url(../fonts/Overpass/static/Overpass-Bold.ttf) format(truetype);
+  font-weight: 700;
 }
 
 .recipe-card {
@@ -129,7 +135,7 @@
 .recipes-page {
   width: 100vw;
   height: 100vh;
-  background-color: #e8e4dc;
+  background-color: #f3f3f3;
   background-image: none;
   padding-top: 45px;
   overflow-x: hidden;
@@ -284,7 +290,7 @@
   z-index: 1;
   background-color: transparent;
   padding: 10px auto;
-  color: #ebe3d3;
+  color: #f3f3f3;
   font-size: 30px;
   border: none;
 
@@ -311,6 +317,7 @@
   width: 100vw;
   z-index: 1;
   background-color: #47482f;
+  color: #f3f3f3;
 
   &__container {
     padding-left: 0;
@@ -320,14 +327,18 @@
     font-family: "Gloria Hallelujah", cursive;
     font-size: 2.5rem;
     width: 300px;
-    color: #ebe3d3;
+    color: #f3f3f3;
   }
 
   .nav-link {
     font-size: 20px;
     font-family: "Overpass", sans-serif;
-    color: #ebe3d3;
+    color: #f3f3f3;
     margin-right: 5rem;
+  }
+
+  .navbar-nav .nav-link.active {
+    color: #f3f3f3;
   }
 }
 
@@ -411,4 +422,104 @@
 
 .contacts {
   font-size: 150px;
+}
+
+.about-page {
+  width: 100vw;
+  height: 100vh;
+
+  background-image: url(../img/about-desgn-2.jpg);
+  background-size: 120%;
+  background-position: center;
+  padding-top: 100px;
+  overflow-x: hidden;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+
+  &__welcome {
+    font-size: 22px;
+    margin-top: 40px;
+    font-family: "Overpass", sans-serif;
+    color: #212529;
+    text-align: center;
+  }
+
+  &__article {
+    font-size: 18px;
+    font-family: "Overpass", sans-serif;
+    color: #212529;
+    width: 100vw;
+    padding: 0 auto 200px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+
+    &:hover {
+      color: #f3f3f3;
+    }
+
+    &:hover .special-word {
+      font-weight: 700;
+    }
+
+    &--row1 {
+      font-size: 22px;
+      text-align: center;
+    }
+
+    &--row2 {
+      font-size: 16px;
+      text-align: right;
+      width: 600px;
+      margin-left: 450px;
+    }
+
+    &--row3 {
+      font-size: 16px;
+      text-align: left;
+      width: 500px;
+      margin-left: 650px;
+    }
+
+    &--row4 {
+      font-size: 25px;
+      margin: 50px 0 10px 400px;
+      text-align: center;
+    }
+
+    &--row5 {
+      font-size: 20px;
+      text-align: left;
+      margin-left: 470px;
+      width: 500px;
+    }
+
+    &--row6 {
+      font-size: 16px;
+      text-align: right;
+      margin-left: 700px;
+      margin-top: 50px;
+      width: 600px;
+    }
+
+    &--row7 {
+      font-size: 18px;
+      text-align: left;
+      margin: 0 0 10px 470px;
+      width: 550px;
+    }
+  }
+
+  .special-word {
+    color: #212529;
+  }
+
+  &__title {
+    text-align: center;
+    font-family: "Gloria Hallelujah", cursive;
+    font-size: 75px;
+    color: #47482f;
+    margin: 30px auto 35px;
+  }
 }

@@ -30,7 +30,7 @@ function Navigation({ setPages, username}) {
             </Nav.Link>
             <Nav.Link
               onClick={() => setPages("recipes")}
-              className="nav-link"
+              
               href="#"
             >
               RECIPES
