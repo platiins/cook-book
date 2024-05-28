@@ -1,12 +1,10 @@
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { useState } from "react";
-
 import "../styles/styles.scss";
-import RecipesPage from "./RecipesPage";
-import Navigation from "./Navigation";
 import { LuLogOut } from "react-icons/lu";
 import { FaCookieBite } from "react-icons/fa";
+import App from "../App";
 
 function Login() {
   const [username, setUsername] = useState("");
@@ -33,11 +31,10 @@ function Login() {
     <div>
       {isLoggedIn ? (
         <div>
-          <Navigation />
+          <App username={username} />
           <Button className="logout-btn" onClick={handleLogout}>
             <LuLogOut />
           </Button>
-          <RecipesPage />
         </div>
       ) : (
         <section className="login-container">

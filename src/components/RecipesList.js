@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { FaBowlFood } from "react-icons/fa6";
 import "../styles/styles.scss";
 
-function RecipesList({ handleLogout }) {
+function RecipesList({ handleLogout, username }) {
   const [selectedCardGroup, setSelectedCardGroup] = useState("All");
   const [counter, setCounter] = useState(0);
   const [selectedCards, setSelectedCards] = useState([]);

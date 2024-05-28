@@ -5,7 +5,6 @@ import { IoIosTime } from "react-icons/io";
 import { IoPersonSharp } from "react-icons/io5";
 import { FaGlobeAmericas } from "react-icons/fa";
 import { HiMiniBolt } from "react-icons/hi2";
-import { GoSquareFill } from "react-icons/go";
 
 import PropTypes from "prop-types";
 

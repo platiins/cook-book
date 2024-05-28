@@ -280,7 +280,7 @@
 .logout-btn {
   width: 100px;
   position: absolute;
-  top: 10px;
+  top: 5px;
   right: 70px;
   z-index: 1;
   background-color: transparent;
@@ -291,6 +291,7 @@
 
   &:hover {
     animation: float 1500ms linear infinite;
+    background-color: transparent;
   }
   @keyframes float {
     0% {
@@ -318,7 +319,7 @@
 
   .home-icon {
     font-family: "Gloria Hallelujah", cursive;
-    font-size: 2.5rem;
+    font-size: 2rem;
     width: 300px;
     color: #ebe3d3;
   }
@@ -406,5 +407,25 @@
       padding: 3px;
       font-size: 30px;
     }
+  }
+}
+
+.contacts {
+  font-size: 200px;
+}
+
+.greeting-container {
+  width: 100vw;
+  background-color: #47482f;
+  color: #ebe3d3;
+  text-align: center;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  .greeting-text {
+    font-size: 16px;
+    padding-top: 90px;
   }
 }
