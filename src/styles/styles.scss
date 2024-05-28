@@ -290,6 +290,7 @@
 
   &:hover {
     animation: float 1500ms linear infinite;
+    background-color: transparent;
   }
   @keyframes float {
     0% {
@@ -406,4 +407,8 @@
       font-size: 30px;
     }
   }
+}
+
+.contacts {
+  font-size: 150px;
 }
