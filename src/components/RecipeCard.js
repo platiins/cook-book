@@ -1,17 +1,17 @@
 import Card from "react-bootstrap/Card";
 import ListGroup from "react-bootstrap/ListGroup";
-import Button from "react-bootstrap/esm/Button";
 
 import { IoIosTime } from "react-icons/io";
 import { IoPersonSharp } from "react-icons/io5";
-import { BiShow } from "react-icons/bi";
 import { FaGlobeAmericas } from "react-icons/fa";
 import { HiMiniBolt } from "react-icons/hi2";
+import { GoSquareFill } from "react-icons/go";
 
 import PropTypes from "prop-types";
 
 import "../styles/styles.scss";
 import IngredBtn from "./IngredBtn";
+import InstructBtn from "./InstructBtn";
 
 function RecipeCard({ recipe }) {
   return (
@@ -37,16 +37,29 @@ function RecipeCard({ recipe }) {
         </Card.Title>
         <div className="btns-container">
           <IngredBtn
-            allIngred={recipe.ingredients.map((ingredient) => (
-              <li>{ingredient}</li>
-            ))}
+            allIngred={
+              <div>
+                <h3 className="popup-title">{recipe.name}</h3>
+                <ul className="popup-list">
+                  {recipe.ingredients.map((ingredient) => (
+                    <li key={ingredient.id}>{ingredient}</li>
+                  ))}
+                </ul>
+              </div>
+            }
           />
-          <Button
-            className="recipe-card__container--btn btn-instructions"
-            variant="light"
-          >
-            <BiShow className="recipe-btn-icon" />
-          </Button>
+          <InstructBtn
+            wholeInstruct={
+              <div>
+                <h3 className="popup-title">{recipe.name}</h3>
+                <ol className="popup-list" id="instruct-list">
+                  {recipe.instructions.map((instruction) => (
+                    <li key={instruction.id}>{instruction}</li>
+                  ))}
+                </ol>
+              </div>
+            }
+          />
         </div>
 
         <ListGroup.Item className="recipe-card__details">

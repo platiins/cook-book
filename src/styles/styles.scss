@@ -198,6 +198,11 @@
 .recipe-card {
   background-color: #b4b093;
   border: solid 3px #47482f;
+  box-shadow: 0 0 20px #97937d;
+
+  &:hover {
+    box-shadow: 0 0 20px #212529;
+  }
 
   &__container {
     font-size: 22px;
@@ -246,29 +251,9 @@
     .btns-container {
       display: flex;
       justify-content: center;
-      gap: 20px;
+      gap: 50px;
       align-items: center;
-
       margin-bottom: 20px;
-    }
-
-    &--btn {
-      background-color: #b4b093;
-      color: #47482f;
-      font-size: 20px;
-      border: #47482f solid 3px;
-      border-radius: 0;
-      margin: 0 5px;
-      width: 40%;
-
-      &:hover {
-        opacity: 0.5;
-      }
-
-      .recipe-btn-icon {
-        padding: 3px;
-        font-size: 30px;
-      }
     }
   }
 
@@ -347,11 +332,79 @@
 }
 
 .popup {
-  position: "fixed";
+  position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: white;
-  z-index: 1000;
+  width: 100vw;
+  height: 100vh;
+  z-index: 3;
+  background-color: rgba(33, 37, 41, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  #ingred-content {
+    width: 40%;
+  }
+
+  &__content {
+    background-image: url(../img/IMG_3284.JPG);
+    background-size: cover;
+    width: 60%;
+    box-shadow: 0 0 20px #212529;
+
+    .btns-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 30px 0px;
+      margin: 0;
+    }
+
+    &--btn {
+      background-color: transparent;
+      font-size: 35px;
+      color: #47482f;
+      border: none;
+      padding: 0;
+
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+
+    .popup-title {
+      text-align: center;
+      font-family: "Gloria Hallelujah", cursive;
+      font-size: 30px;
+      color: #212529;
+      margin: 0 30px 30px;
+    }
+
+    &--list {
+      font-size: 20px;
+      padding: 0 50px 50px;
+    }
+  }
+}
+
+.pop-btn-container {
+  width: 30%;
+  .pop-up-btn {
+    background-color: #b4b093;
+    color: #47482f;
+    font-size: 20px;
+    border: #47482f solid 3px;
+    border-radius: 0;
+    width: 100%;
+
+    &:hover {
+      box-shadow: 0 0 5px #47482f;
+    }
+
+    &__icon {
+      padding: 3px;
+      font-size: 30px;
+    }
+  }
 }

@@ -12,9 +12,9 @@ function IngredBtn({ allIngred }) {
   };
 
   return (
-    <div>
-      <button onClick={togglePopup}>
-        <BsListCheck className="recipe-btn-icon" />
+    <div className="pop-btn-container">
+      <button className="pop-up-btn" onClick={togglePopup}>
+        <BsListCheck className="pop-up-btn__icon" />
       </button>
       {isOpen && (
         <Ingredients handleClose={togglePopup} allIngred={allIngred} />
