@@ -437,9 +437,11 @@
   flex-flow: column;
   align-items: center;
 
+  justify-content: center;
+
   &__welcome {
     font-size: 22px;
-    margin-top: 40px;
+
     font-family: "Overpass", sans-serif;
     color: #212529;
     text-align: center;
@@ -453,7 +455,7 @@
     padding: 0 auto 200px;
     display: flex;
     flex-flow: column;
-    justify-content: center;
+    justify-content: space-around;
 
     &:hover {
       color: #f3f3f3;
