@@ -11,11 +11,21 @@ import PropTypes from "prop-types";
 import "../styles/styles.scss";
 import IngredBtn from "./IngredBtn";
 import InstructBtn from "./InstructBtn";
+import { useContext } from "react";
+import { ThemeContext } from "../context/theme";
 
 function RecipeCard({ recipe }) {
+  const { theme } = useContext(ThemeContext);
+
   return (
     <Card className="recipe-card">
-      <Card.Body className="recipe-card__container">
+      <Card.Body
+        className="recipe-card__container"
+        style={{
+          backgroundColor: theme === "dark" ? "red" : "green",
+          color: theme === "dark" ? "green" : "red",
+        }}
+      >
         <ListGroup.Item className="cooking-serving">
           <div className="cooking-serving__box">
             <IoIosTime className="recipe-card-icon" />

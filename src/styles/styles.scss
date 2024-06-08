@@ -22,12 +22,7 @@
   font-weight: 700;
 }
 
-.recipe-card {
-  width: 24em;
-
-  border-radius: 0;
-  border: solid 2px #725050;
-}
+// LOGIN PAGE
 
 .login-page {
   background-color: #47482f;
@@ -132,12 +127,102 @@
   }
 }
 
+// HEADER // NAVIGATION
+
+.main-nav {
+  position: fixed;
+  padding: 10px 150px 10px 10px;
+  width: 100vw;
+  z-index: 1;
+  background-color: #47482f;
+
+  &__container {
+    padding-left: 0;
+  }
+
+  .home-icon {
+    font-family: "Gloria Hallelujah", cursive;
+    font-size: 2.5rem;
+    width: 300px;
+    color: #f3f3f3;
+  }
+
+  .nav-link {
+    font-size: 20px;
+    font-family: "Overpass", sans-serif;
+    color: #f3f3f3;
+    margin-right: 5rem;
+  }
+
+  .navbar-nav .nav-link.active {
+    color: #f3f3f3;
+  }
+}
+
+.logout-btn {
+  width: 100px;
+  position: absolute;
+  top: 15px;
+  right: 70px;
+  z-index: 1;
+  background-color: transparent;
+  padding: 10px auto;
+  color: #f3f3f3;
+  font-size: 30px;
+  border: none;
+
+  &:hover {
+    animation: float 1500ms linear infinite;
+    background-color: transparent;
+  }
+
+  @keyframes float {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(10px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+}
+
+.change-theme-btn {
+  background-color: transparent;
+  color: #f3f3f3;
+  font-size: 30px;
+  border: none;
+
+  margin-bottom: 10px;
+
+  &:hover {
+    animation: rotate-theme 3000ms infinite;
+    background-color: transparent;
+  }
+
+  @keyframes rotate-theme {
+    0% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(180deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+
+// RECIPES PAGE
+
 .recipes-page {
   width: 100vw;
   height: 100vh;
   background-color: #f3f3f3;
   background-image: none;
-  padding-top: 45px;
+  padding-top: 80px;
   overflow-x: hidden;
   display: flex;
   flex-flow: column;
@@ -201,6 +286,7 @@
 }
 
 .recipe-card {
+  width: 24em;
   background-color: #b4b093;
   border: solid 3px #47482f;
   box-shadow: 0 0 20px #97937d;
@@ -282,65 +368,7 @@
   }
 }
 
-.logout-btn {
-  width: 100px;
-  position: absolute;
-  top: 10px;
-  right: 70px;
-  z-index: 1;
-  background-color: transparent;
-  padding: 10px auto;
-  color: #f3f3f3;
-  font-size: 30px;
-  border: none;
-
-  &:hover {
-    animation: float 1500ms linear infinite;
-    background-color: transparent;
-  }
-  @keyframes float {
-    0% {
-      transform: translateX(0);
-    }
-    50% {
-      transform: translateX(10px);
-    }
-    100% {
-      transform: translateX(0);
-    }
-  }
-}
-
-.main-nav {
-  position: fixed;
-  padding: 10px 150px 10px 10px;
-  width: 100vw;
-  z-index: 1;
-  background-color: #47482f;
-  color: #f3f3f3;
-
-  &__container {
-    padding-left: 0;
-  }
-
-  .home-icon {
-    font-family: "Gloria Hallelujah", cursive;
-    font-size: 2.5rem;
-    width: 300px;
-    color: #f3f3f3;
-  }
-
-  .nav-link {
-    font-size: 20px;
-    font-family: "Overpass", sans-serif;
-    color: #f3f3f3;
-    margin-right: 5rem;
-  }
-
-  .navbar-nav .nav-link.active {
-    color: #f3f3f3;
-  }
-}
+// RECIPES // CARD POPUP
 
 .popup {
   position: fixed;
@@ -420,101 +448,29 @@
   }
 }
 
-.contacts {
-  font-size: 150px;
-}
+// ABOUT US PAGE
 
 .about-page {
   width: 100vw;
   height: 100vh;
+  // background-image: url(../img/about-desgn-2.jpg);
+  // background-size: 120%;
+  // background-position: center;
+  background-color: #b4b093;
+  padding-top: 150px;
 
-  background-image: url(../img/about-desgn-2.jpg);
-  background-size: 120%;
-  background-position: center;
-  padding-top: 100px;
-  overflow-x: hidden;
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-
-  justify-content: center;
+  &-container {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+  }
 
   &__welcome {
     font-size: 22px;
-
     font-family: "Overpass", sans-serif;
     color: #212529;
     text-align: center;
-  }
-
-  &__article {
-    font-size: 18px;
-    font-family: "Overpass", sans-serif;
-    color: #212529;
-    width: 100vw;
-    padding: 0 auto 200px;
-    display: flex;
-    flex-flow: column;
-    justify-content: space-around;
-
-    &:hover {
-      color: #f3f3f3;
-    }
-
-    &:hover .special-word {
-      font-weight: 700;
-    }
-
-    &--row1 {
-      font-size: 22px;
-      text-align: center;
-    }
-
-    &--row2 {
-      font-size: 16px;
-      text-align: right;
-      width: 600px;
-      margin-left: 450px;
-    }
-
-    &--row3 {
-      font-size: 16px;
-      text-align: left;
-      width: 500px;
-      margin-left: 650px;
-    }
-
-    &--row4 {
-      font-size: 25px;
-      margin: 50px 0 10px 400px;
-      text-align: center;
-    }
-
-    &--row5 {
-      font-size: 20px;
-      text-align: left;
-      margin-left: 470px;
-      width: 500px;
-    }
-
-    &--row6 {
-      font-size: 16px;
-      text-align: right;
-      margin-left: 700px;
-      margin-top: 50px;
-      width: 600px;
-    }
-
-    &--row7 {
-      font-size: 18px;
-      text-align: left;
-      margin: 0 0 10px 470px;
-      width: 550px;
-    }
-  }
-
-  .special-word {
-    color: #212529;
   }
 
   &__title {
@@ -522,6 +478,68 @@
     font-family: "Gloria Hallelujah", cursive;
     font-size: 75px;
     color: #47482f;
-    margin: 30px auto 35px;
+  }
+
+  &__article {
+    font-size: 18px;
+    font-family: "Overpass", sans-serif;
+    color: #47482f;
+    width: 500px;
+    text-align: justify;
+    margin-top: 30px;
+
+    &--row {
+      text-align: center;
+      //   &-1 {
+      //     font-size: 22px;
+      //     text-align: center;
+      //   }
+
+      //   &-2 {
+      //     font-size: 16px;
+      //     text-align: right;
+      //     width: 600px;
+      //     margin-left: 450px;
+      //   }
+
+      //   &-3 {
+      //     font-size: 16px;
+      //     text-align: left;
+      //     width: 500px;
+      //     margin-left: 650px;
+      //   }
+
+      //   &-4 {
+      //     font-size: 25px;
+      //     margin: 50px 0 10px 400px;
+      //     text-align: center;
+      //   }
+
+      //   &-5 {
+      //     font-size: 20px;
+      //     text-align: left;
+      //     margin-left: 470px;
+      //     width: 500px;
+      //   }
+
+      //   &-6 {
+      //     font-size: 16px;
+      //     text-align: right;
+      //     margin-left: 700px;
+      //     margin-top: 50px;
+      //     width: 600px;
+      //   }
+
+      //   &-7 {
+      //     font-size: 18px;
+      //     text-align: left;
+      //     margin: 0 0 10px 470px;
+      //     width: 550px;
+      //   }
+    }
+  }
+
+  .special-word {
+    font-weight: 700;
   }
 }

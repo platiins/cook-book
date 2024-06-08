@@ -3,6 +3,8 @@ import Button from "react-bootstrap/esm/Button";
 import { useState, useEffect } from "react";
 import { FaBowlFood } from "react-icons/fa6";
 import "../styles/styles.scss";
+import { ThemeContext } from "../context/theme";
+import { useContext } from "react";
 
 function RecipesList({ handleLogout, username }) {
   const [selectedCardGroup, setSelectedCardGroup] = useState("All");
@@ -40,8 +42,13 @@ function RecipesList({ handleLogout, username }) {
       ? selectedCards
       : selectedCards.filter((recipe) => recipe.cuisine === selectedCardGroup);
 
+  const { theme } = useContext(ThemeContext);
+
   return (
-    <div className="recipes-page">
+    <div
+      className="recipes-page"
+      style={{ backgroundColor: theme === "dark" ? "green" : "red" }}
+    >
       <div className="filter-btns-container mt-5" id="buttons">
         {[
           "All",

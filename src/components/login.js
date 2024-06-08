@@ -1,9 +1,11 @@
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { useState } from "react";
 import { LuLogOut } from "react-icons/lu";
 import { FaCookieBite } from "react-icons/fa";
 import App from "../App";
+
+import { useState } from "react";
+
 import "../styles/styles.scss";
 
 function Login() {
@@ -32,9 +34,15 @@ function Login() {
       {isLoggedIn ? (
         <div>
           <App username={username} />
-          <Button className="logout-btn" onClick={handleLogout}>
+          <button
+            className="logout-btn"
+            onClick={handleLogout}
+            // style={{
+            //   color: theme === "light" ? " #b4b093" : "#47482f",
+            // }}
+          >
             <LuLogOut />
-          </Button>
+          </button>
         </div>
       ) : (
         <div className="login-page">
