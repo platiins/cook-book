@@ -487,17 +487,6 @@
 
     &--row {
       text-align: center;
-      //   &-1 {
-      //     font-size: 22px;
-      //     text-align: center;
-      //   }
-
-      //   &-2 {
-      //     font-size: 16px;
-      //     text-align: right;
-      //     width: 600px;
-      //     margin-left: 450px;
-      //   }
 
       &-3 {
         text-align: end;
@@ -543,5 +532,27 @@
         }
       }
     }
+  }
+}
+
+// CONTACTS PAGE
+
+.contacts-container {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+
+  &__title {
+    margin-bottom: 50px;
+    font-size: 30px;
+    font-family: "Gloria Hallelujah", cursive;
+  }
+
+  &__text {
+    font-size: 18px;
+    font-family: "Overpass", sans-serif;
   }
 }

@@ -5,6 +5,8 @@ import { GrInstagram } from "react-icons/gr";
 import { FaPinterestP } from "react-icons/fa6";
 import { BsYoutube } from "react-icons/bs";
 
+import "../styles/styles.scss";
+
 function AboutUs() {
   const { theme } = useContext(ThemeContext);
 
