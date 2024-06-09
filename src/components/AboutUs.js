@@ -1,6 +1,10 @@
 import { ThemeContext } from "../context/theme";
 import { useContext } from "react";
 
+import { GrInstagram } from "react-icons/gr";
+import { FaPinterestP } from "react-icons/fa6";
+import { BsYoutube } from "react-icons/bs";
+
 function AboutUs() {
   const { theme } = useContext(ThemeContext);
 
@@ -12,30 +16,23 @@ function AboutUs() {
       }}
     >
       <section className="about-page-container">
-        <p
-          className="about-page__welcome"
-          style={{
-            color: theme === "light" ? "#47482f" : "#b4b093",
-          }}
-        >
-          WELCOME TO
-        </p>
-        <h1
-          className="about-page__title"
-          style={{
-            color: theme === "light" ? "#47482f" : "#b4b093",
-          }}
-        >
-          COOK BOOK
-        </h1>
+        <p className="about-page__welcome">WELCOME TO</p>
+        <h1 className="about-page__title">COOK BOOK</h1>
         <article className="about-page__article">
           <p className="about-page__article--row-1">
             YOUR GO-TO SOURCE FOR DELICIOUS AND DIVERSE RECIPES FROM AROUND THE
             GLOBE.
           </p>
           <p className="about-page__article--row-2">
-            WE ARE PASSIONATE ABOUT COOKING AND DEDICATED TO SHARING
-            EASY-TO-FOLLOW RECIPES THAT INSPIRE AND DELIGHT.
+            <span
+              className="special-word"
+              style={{
+                color: theme === "light" ? "#47482f" : "#b4b093",
+              }}
+            >
+              THIS{" "}
+            </span>
+            IS WHERE YOU'LL FIND INSPIRATION FOR YOUR NEXT MEAL.
           </p>
           <p className="about-page__article--row-3">
             <span
@@ -44,20 +41,25 @@ function AboutUs() {
                 color: theme === "light" ? "#47482f" : "#b4b093",
               }}
             >
-              THIS
-            </span>{" "}
-            IS WHERE YOU'LL FIND INSPIRATION FOR YOUR NEXT MEAL.
+              IS{" "}
+            </span>
+            IT TIME TO DISCOVER NEW FLAVORS?
           </p>
-          <p className="about-page__article--row-4">
+          <p
+            className="about-page__article--row-4"
+            style={{
+              color: theme === "light" ? "#212529" : "#47482f",
+            }}
+          >
             <span
               className="special-word"
               style={{
-                color: theme === "light" ? "#47482f" : "#b4b093",
+                color: theme === "light" ? "#212529" : "#b4b093",
               }}
             >
-              IS
+              YOUR{" "}
             </span>
-            IT TIME TO DISCOVER NEW FLAVORS?
+            KITCHEN ADVENTURE STARTS HERE.
           </p>
           <p className="about-page__article--row-5">
             <span
@@ -66,25 +68,20 @@ function AboutUs() {
                 color: theme === "light" ? "#47482f" : "#b4b093",
               }}
             >
-              YOUR
+              SIGN{" "}
             </span>
-            KITCHEN ADVENTURE STARTS HERE.
-            <p>
-              <span
-                className="special-word"
-                style={{
-                  color: theme === "light" ? "#47482f" : "#b4b093",
-                }}
-              >
-                SIGN
-              </span>
-              UP FOR OUR NEWSLETTER TO STAY UPDATED.
-            </p>
+            UP FOR OUR NEWSLETTER TO STAY UPDATED.
           </p>
-          <div>
-            <button>INSTA</button>
-            <button>PINTEREST</button>
-            <button>YOUTUBE</button>
+          <div className="sm-btn">
+            <button className="sm-btn__icon">
+              <GrInstagram />
+            </button>
+            <button className="sm-btn__icon">
+              <FaPinterestP />
+            </button>
+            <button className="sm-btn__icon">
+              <BsYoutube />
+            </button>
           </div>
           <p className="about-page__article--row-6">
             <span
@@ -93,7 +90,7 @@ function AboutUs() {
                 color: theme === "light" ? "#47482f" : "#b4b093",
               }}
             >
-              TO
+              TO{" "}
             </span>
             BRING JOY TO YOUR TABLE,
             <span
@@ -102,7 +99,8 @@ function AboutUs() {
                 color: theme === "light" ? "#47482f" : "#b4b093",
               }}
             >
-              COOK
+              {" "}
+              COOK{" "}
             </span>
             WITH US.
           </p>
@@ -113,7 +111,7 @@ function AboutUs() {
                 color: theme === "light" ? "#47482f" : "#b4b093",
               }}
             >
-              DINNER
+              DINNER{" "}
             </span>
             IDEAS ARE JUST A CLICK AWAY, PERFECT FOR ANY DAY, ESPECIALLY
             <span
@@ -122,7 +120,8 @@ function AboutUs() {
                 color: theme === "light" ? "#47482f" : "#b4b093",
               }}
             >
-              TODAY
+              {" "}
+              TODAY{" "}
             </span>
             !
           </p>

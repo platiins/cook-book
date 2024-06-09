@@ -4,7 +4,7 @@ import Navbar from "react-bootstrap/Navbar";
 import { ThemeContext } from "../context/theme";
 import { useContext } from "react";
 
-import { RiExchange2Line } from "react-icons/ri";
+import { FaExchangeAlt } from "react-icons/fa";
 import "../styles/styles.scss";
 
 function Navigation({ setPages, username }) {
@@ -24,9 +24,6 @@ function Navigation({ setPages, username }) {
           onClick={() => setPages("about-us")}
           className="home-icon"
           href="#"
-          style={{
-            color: theme === "light" ? " #b4b093" : "#47482f",
-          }}
         >
           {username}
         </Navbar.Brand>
@@ -62,17 +59,6 @@ function Navigation({ setPages, username }) {
               RECIPES
             </Nav.Link>
           </Nav>
-          <Nav>
-            <Nav.Link
-              className="nav-link"
-              href="#"
-              style={{
-                color: theme === "light" ? " #b4b093" : "#47482f",
-              }}
-            >
-              SM
-            </Nav.Link>
-          </Nav>
           <button
             className="change-theme-btn"
             onClick={toggleTheme}
@@ -80,7 +66,7 @@ function Navigation({ setPages, username }) {
               color: theme === "light" ? " #b4b093" : "#47482f",
             }}
           >
-            <RiExchange2Line />
+            <FaExchangeAlt />
           </button>
         </Navbar.Collapse>
       </Container>

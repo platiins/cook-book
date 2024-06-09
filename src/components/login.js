@@ -34,13 +34,7 @@ function Login() {
       {isLoggedIn ? (
         <div>
           <App username={username} />
-          <button
-            className="logout-btn"
-            onClick={handleLogout}
-            // style={{
-            //   color: theme === "light" ? " #b4b093" : "#47482f",
-            // }}
-          >
+          <button className="logout-btn" onClick={handleLogout}>
             <LuLogOut />
           </button>
         </div>
