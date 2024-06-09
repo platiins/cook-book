@@ -237,16 +237,6 @@
     justify-content: space-evenly;
     width: 80%;
 
-    #Asian,
-    #Italian,
-    #Pakistani,
-    #Mexican,
-    #Japanese,
-    #Indian,
-    #Turkish {
-      color: #212529;
-    }
-
     .filter-btns {
       width: 15%;
       min-width: 100px;
@@ -259,11 +249,10 @@
       gap: 15px;
       background-color: transparent;
       border: none;
-      color: #727454;
+      color: #212529;
 
       &:hover .filter-btns__icon {
         transform: scale(1.5);
-        color: #b4b093;
         transition-duration: 700ms;
       }
 
@@ -288,8 +277,10 @@
 .recipe-card {
   width: 24em;
   background-color: #b4b093;
-  border: solid 3px #47482f;
-  box-shadow: 0 0 20px #97937d;
+  box-sizing: border-box;
+  border-radius: 0px;
+  box-shadow: 0 0 20px #212529;
+  border: #212529 3px solid;
 
   &:hover {
     box-shadow: 0 0 20px #212529;
@@ -333,10 +324,10 @@
     &--img {
       margin-top: 10px;
       border-radius: 0;
-      border: solid 3px #47482f;
+      border: solid 3px #212529;
       height: 250px;
       object-fit: cover;
-      filter: drop-shadow(0 0 20px #47482f);
+      filter: drop-shadow(0 0 20px #212121);
     }
 
     .btns-container {
@@ -401,7 +392,6 @@
     }
 
     &--btn {
-      background-color: transparent;
       font-size: 35px;
       color: #47482f;
       border: none;
@@ -430,15 +420,15 @@
 .pop-btn-container {
   width: 30%;
   .pop-up-btn {
-    background-color: #b4b093;
-    color: #47482f;
+    background-color: transparent;
+    color: inherit;
     font-size: 20px;
-    border: #47482f solid 3px;
+    border: #212121 solid 2px;
     border-radius: 0;
     width: 100%;
 
     &:hover {
-      box-shadow: 0 0 5px #47482f;
+      box-shadow: 0 0 5px #212121;
     }
 
     &__icon {

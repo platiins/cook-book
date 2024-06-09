@@ -47,7 +47,7 @@ function RecipesList({ handleLogout, username }) {
   return (
     <div
       className="recipes-page"
-      style={{ backgroundColor: theme === "dark" ? "green" : "red" }}
+      style={{ backgroundColor: theme === "light" ? "#b4b093" : "#47482f" }}
     >
       <div className="filter-btns-container mt-5" id="buttons">
         {[

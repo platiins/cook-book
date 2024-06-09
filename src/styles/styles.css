@@ -202,15 +202,6 @@
   justify-content: space-evenly;
   width: 80%;
 }
-.recipes-page .filter-btns-container #Asian,
-.recipes-page .filter-btns-container #Italian,
-.recipes-page .filter-btns-container #Pakistani,
-.recipes-page .filter-btns-container #Mexican,
-.recipes-page .filter-btns-container #Japanese,
-.recipes-page .filter-btns-container #Indian,
-.recipes-page .filter-btns-container #Turkish {
-  color: #212529;
-}
 .recipes-page .filter-btns-container .filter-btns {
   width: 15%;
   min-width: 100px;
@@ -223,11 +214,10 @@
   gap: 15px;
   background-color: transparent;
   border: none;
-  color: #727454;
+  color: #212529;
 }
 .recipes-page .filter-btns-container .filter-btns:hover .filter-btns__icon {
   transform: scale(1.5);
-  color: #b4b093;
   transition-duration: 700ms;
 }
 .recipes-page .filter-btns-container .filter-btns .filter-btns__icon {
@@ -247,8 +237,10 @@
 .recipe-card {
   width: 24em;
   background-color: #b4b093;
-  border: solid 3px #47482f;
-  box-shadow: 0 0 20px #97937d;
+  box-sizing: border-box;
+  border-radius: 0px;
+  box-shadow: 0 0 20px #212529;
+  border: #212529 3px solid;
 }
 .recipe-card:hover {
   box-shadow: 0 0 20px #212529;
@@ -287,11 +279,11 @@
 .recipe-card__container--img {
   margin-top: 10px;
   border-radius: 0;
-  border: solid 3px #47482f;
+  border: solid 3px #212529;
   height: 250px;
   -o-object-fit: cover;
      object-fit: cover;
-  filter: drop-shadow(0 0 20px #47482f);
+  filter: drop-shadow(0 0 20px #212121);
 }
 .recipe-card__container .btns-container {
   display: flex;
@@ -346,7 +338,6 @@
   margin: 0;
 }
 .popup__content--btn {
-  background-color: transparent;
   font-size: 35px;
   color: #47482f;
   border: none;
@@ -371,15 +362,15 @@
   width: 30%;
 }
 .pop-btn-container .pop-up-btn {
-  background-color: #b4b093;
-  color: #47482f;
+  background-color: transparent;
+  color: inherit;
   font-size: 20px;
-  border: #47482f solid 3px;
+  border: #212121 solid 2px;
   border-radius: 0;
   width: 100%;
 }
 .pop-btn-container .pop-up-btn:hover {
-  box-shadow: 0 0 5px #47482f;
+  box-shadow: 0 0 5px #212121;
 }
 .pop-btn-container .pop-up-btn__icon {
   padding: 3px;

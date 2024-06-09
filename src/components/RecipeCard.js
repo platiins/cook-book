@@ -18,13 +18,15 @@ function RecipeCard({ recipe }) {
   const { theme } = useContext(ThemeContext);
 
   return (
-    <Card className="recipe-card">
+    <Card
+      className="recipe-card"
+      style={{
+        backgroundColor: theme === "light" ? "#47482f" : "#b4b093",
+      }}
+    >
       <Card.Body
         className="recipe-card__container"
-        style={{
-          backgroundColor: theme === "dark" ? "red" : "green",
-          color: theme === "dark" ? "green" : "red",
-        }}
+        style={{ color: theme === "light" ? "#b4b093" : "#47482f" }}
       >
         <ListGroup.Item className="cooking-serving">
           <div className="cooking-serving__box">
@@ -41,7 +43,10 @@ function RecipeCard({ recipe }) {
           variant="top"
           src={recipe.image}
         />
-        <Card.Title className="recipe-card__container--title">
+        <Card.Title
+          className="recipe-card__container--title"
+          style={{ color: theme === "light" ? "#b4b093" : "#212529" }}
+        >
           {recipe.name.toLocaleUpperCase()}
         </Card.Title>
         <div className="btns-container">

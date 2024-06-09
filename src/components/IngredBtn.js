@@ -1,8 +1,10 @@
 import Ingredients from "./Ingredients";
-import "../styles/styles.scss";
+
 import { BsListCheck } from "react-icons/bs";
 
 import { useState } from "react";
+
+import "../styles/styles.scss";
 
 function IngredBtn({ allIngred }) {
   const [isOpen, setIsOpen] = useState(false);
