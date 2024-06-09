@@ -465,4 +465,12 @@
 .contacts-container__text {
   font-size: 18px;
   font-family: "Overpass", sans-serif;
+}
+
+.register-page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }/*# sourceMappingURL=styles.css.map */

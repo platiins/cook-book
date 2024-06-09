@@ -40,6 +40,15 @@ function Navigation({ setPages, username }) {
               ABOUT US
             </Nav.Link>
             <Nav.Link
+              onClick={() => setPages("recipes")}
+              href="#"
+              style={{
+                color: theme === "light" ? " #b4b093" : "#47482f",
+              }}
+            >
+              RECIPES
+            </Nav.Link>
+            <Nav.Link
               onClick={() => setPages("contacts")}
               className="nav-link"
               href="#"
@@ -50,13 +59,13 @@ function Navigation({ setPages, username }) {
               CONTACTS
             </Nav.Link>
             <Nav.Link
-              onClick={() => setPages("recipes")}
+              onClick={() => setPages("register")}
               href="#"
               style={{
                 color: theme === "light" ? " #b4b093" : "#47482f",
               }}
             >
-              RECIPES
+              REGISTER
             </Nav.Link>
           </Nav>
           <button
