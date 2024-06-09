@@ -555,4 +555,41 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  &__form {
+    width: 40%;
+    align-items: center;
+  }
+
+  &__btn {
+    width: 50%;
+  }
+
+  .btn-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__input {
+    font-size: 18px;
+    font-family: "Overpass", sans-serif;
+    border: solid 2px #212529;
+    // padding: 7px 15px 5px;
+
+    &:hover,
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 10px #212529;
+      border: solid 2px #212529;
+    }
+  }
+
+  .email-sign {
+    border: #212529 solid 2px;
+    border-right: 1px;
+    font-size: 18px;
+
+    box-sizing: content-box;
+  }
 }
