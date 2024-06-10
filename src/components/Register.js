@@ -13,12 +13,16 @@ function Register() {
     lastName: "",
     username: "",
     password: "",
+    email: "",
   });
 
   const [firstNameError, setFirstNameError] = useState("");
   const [lastNameError, setLastNameError] = useState("");
   const [usernameError, setUsernameError] = useState("");
   const [passwordError, setPasswordError] = useState("");
+  const [emailError, setEmailError] = useState("");
+
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -64,13 +68,20 @@ function Register() {
           setPasswordError("");
         }
         break;
-
+      case "email":
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(value)) {
+          setEmailError("Please provide a valid email address");
+        } else {
+          setEmailError("");
+        }
+        break;
       default:
         break;
     }
   };
 
-  const handleSubmit = (event) => {gi
+  const handleSubmit = (event) => {
     event.preventDefault();
     event.stopPropagation();
 
@@ -82,8 +93,9 @@ function Register() {
       email: "",
     });
 
-    const form = event.target;
-    form.reset();
+    event.target.reset();
+
+    setIsSubmitted(true);
   };
 
   return (
@@ -148,7 +160,6 @@ function Register() {
                   backgroundColor: theme === "light" ? "#47482f" : "#b4b093",
                   color: theme === "light" ? "#b4b093" : "#47482f",
                 }}
-                required
               >
                 @
               </InputGroup.Text>
@@ -201,13 +212,21 @@ function Register() {
             <Form.Control
               required
               type="email"
+              name="email"
+              value={registerData.email}
               placeholder="ENTER EMAIL"
               className="register-page__input"
               style={{
                 backgroundColor: theme === "light" ? "#47482f" : "#b4b093",
                 color: theme === "light" ? "#b4b093" : "#47482f",
               }}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              isInvalid={emailError !== ""}
             />
+            <Form.Control.Feedback type="invalid">
+              {emailError || "Please provide an email address"}
+            </Form.Control.Feedback>
           </Form.Group>
         </Row>
 
@@ -276,6 +295,16 @@ function Register() {
           </button>
         </Row>
       </Form>
+      {isSubmitted && (
+        <div className="registration-confirm">
+          <p
+            className="registration-confirm__text"
+            style={{ color: theme === "light" ? "#47482f" : "#b4b093" }}
+          >
+            REGISTRATION SUCCESSFUL
+          </p>
+        </div>
+      )}
     </section>
   );
 }
