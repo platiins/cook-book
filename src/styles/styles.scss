@@ -277,38 +277,22 @@
 // RECIPES PAGE
 
 .recipes-page {
-  width: 100vw;
-  height: 100vh;
+  @include pageSetup;
+  @include flex(column, center, center, 0);
   background-color: #f3f3f3;
   background-image: none;
-  padding-top: 80px;
-  overflow-x: hidden;
-  display: flex;
-  flex-flow: column;
-  align-items: center;
 
   .filter-btns-container {
-    display: flex;
-
-    gap: 20px;
-    row-gap: 50px;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 80%;
+    @include flex(row wrap, center, center, 10px 10px);
+    padding: 20px 50px 50px;
+    width: 100%;
 
     .filter-btns {
-      width: 15%;
+      @include flex(column, center, center, 10px);
+      @include fontChange("Overpass", sans-serif, 400, 1.3rem, #212529);
+      @include boxStyle(transparent, none);
+      width: 10%;
       min-width: 100px;
-      font-size: 25px;
-      font-family: "Overpass", sans-serif;
-      display: flex;
-      flex-flow: column;
-      justify-content: center;
-      align-items: center;
-      gap: 15px;
-      background-color: transparent;
-      border: none;
-      color: #212529;
 
       &:hover .filter-btns__icon {
         transform: scale(1.5);
@@ -322,43 +306,31 @@
   }
 
   .recipes-list {
-    display: flex;
-    justify-content: center;
+    @include flex(row wrap, center, center, 70px 70px);
     list-style: none;
-    gap: 50px;
-    padding: 50px 70px;
-    flex-wrap: wrap;
-    align-items: center;
-    row-gap: 50px;
+    padding: 20px 100px;
   }
 }
 
 .recipe-card {
-  width: 24em;
-  background-color: #b4b093;
+  @include boxStyle(#b4b093, #212529 3px solid);
+  width: 21em;
   box-sizing: border-box;
   border-radius: 0px;
   box-shadow: 0 0 20px #212529;
-  border: #212529 3px solid;
 
   &:hover {
     box-shadow: 0 0 20px #212529;
   }
 
   &__container {
-    font-size: 22px;
-    font-family: "Overpass", sans-serif;
-    color: #47482f;
+    @include fontChange("Overpass", sans-serif, 400, 1.3rem, #47482f);
 
     .cooking-serving {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      @include flex(row, space-between, center, 0);
 
       .cooking-serving__box {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flex(row, center, center, 0);
       }
     }
 

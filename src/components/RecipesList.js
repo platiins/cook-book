@@ -49,16 +49,14 @@ function RecipesList({ handleLogout, username }) {
       className="recipes-page"
       style={{ backgroundColor: theme === "light" ? "#b4b093" : "#47482f" }}
     >
-      <div className="filter-btns-container mt-5" id="buttons">
+      <div className="filter-btns-container" id="buttons">
         {[
           "All",
           "Italian",
-          "Pakistani",
           "Asian",
           "Mexican",
           "Japanese",
           "Indian",
-          "Turkish",
         ].map((cuisine) => (
           <Button
             className="filter-btns"

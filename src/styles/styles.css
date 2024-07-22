@@ -287,36 +287,40 @@
 
 .recipes-page {
   width: 100vw;
-  height: 100vh;
-  background-color: #f3f3f3;
-  background-image: none;
-  padding-top: 80px;
-  overflow-x: hidden;
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-}
-.recipes-page .filter-btns-container {
-  display: flex;
-  gap: 20px;
-  row-gap: 50px;
-  align-items: center;
-  justify-content: space-evenly;
-  width: 80%;
-}
-.recipes-page .filter-btns-container .filter-btns {
-  width: 15%;
-  min-width: 100px;
-  font-size: 25px;
-  font-family: "Overpass", sans-serif;
+  height: 100%;
+  min-height: 100vh;
+  padding: 7rem 2rem 2rem;
   display: flex;
   flex-flow: column;
   justify-content: center;
   align-items: center;
-  gap: 15px;
+  gap: 0;
+  background-color: #f3f3f3;
+  background-image: none;
+}
+.recipes-page .filter-btns-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px 10px;
+  padding: 20px 50px 50px;
+  width: 100%;
+}
+.recipes-page .filter-btns-container .filter-btns {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-family: "Overpass", sans-serif;
+  font-weight: 400;
+  font-size: 1.3rem;
+  color: #212529;
   background-color: transparent;
   border: none;
-  color: #212529;
+  width: 10%;
+  min-width: 100px;
 }
 .recipes-page .filter-btns-container .filter-btns:hover .filter-btns__icon {
   transform: scale(1.5);
@@ -327,40 +331,44 @@
 }
 .recipes-page .recipes-list {
   display: flex;
+  flex-flow: row wrap;
   justify-content: center;
-  list-style: none;
-  gap: 50px;
-  padding: 50px 70px;
-  flex-wrap: wrap;
   align-items: center;
-  row-gap: 50px;
+  gap: 70px 70px;
+  list-style: none;
+  padding: 20px 100px;
 }
 
 .recipe-card {
-  width: 24em;
   background-color: #b4b093;
+  border: #212529 3px solid;
+  width: 21em;
   box-sizing: border-box;
   border-radius: 0px;
   box-shadow: 0 0 20px #212529;
-  border: #212529 3px solid;
 }
 .recipe-card:hover {
   box-shadow: 0 0 20px #212529;
 }
 .recipe-card__container {
-  font-size: 22px;
   font-family: "Overpass", sans-serif;
+  font-weight: 400;
+  font-size: 1.3rem;
   color: #47482f;
 }
 .recipe-card__container .cooking-serving {
   display: flex;
+  flex-flow: row;
   justify-content: space-between;
   align-items: center;
+  gap: 0;
 }
 .recipe-card__container .cooking-serving .cooking-serving__box {
   display: flex;
+  flex-flow: row;
   justify-content: center;
   align-items: center;
+  gap: 0;
 }
 .recipe-card__container .recipe-card-icon {
   font-size: 30px;
