@@ -1,7 +1,6 @@
 import React from "react";
 
 import AboutUs from "./components/AboutUs";
-import Contacts from "./components/Contacts";
 import Navigation from "./components/Navigation";
 import RecipesPage from "./components/RecipesPage";
 import Register from "./components/Register";
@@ -23,7 +22,6 @@ function App({ username, handleLogout }) {
         />
         {page === "about-us" && <AboutUs />}
         {page === "recipes" && <RecipesPage />}
-        {page === "contacts" && <Contacts />}
         {page === "register" && <Register />}
       </div>
     </ThemeProvider>

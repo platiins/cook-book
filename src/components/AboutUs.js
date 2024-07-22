@@ -17,11 +17,11 @@ function AboutUs() {
         <p className="about-page__welcome">WELCOME TO</p>
         <h1 className="about-page__title">COOK BOOK</h1>
         <article className="about-page__article">
-          <p className="about-page__article--row-1">
+          <p className="about-page__article--row">
             YOUR GO-TO SOURCE FOR DELICIOUS AND DIVERSE RECIPES FROM AROUND THE
             GLOBE.
           </p>
-          <p className="about-page__article--row-2">
+          <p className="about-page__article--row">
             <span
               className="special-word"
               style={{
@@ -32,7 +32,7 @@ function AboutUs() {
             </span>
             IS WHERE YOU'LL FIND INSPIRATION FOR YOUR NEXT MEAL.
           </p>
-          <p className="about-page__article--row-3">
+          <p className="about-page__article--row">
             <span
               className="special-word"
               style={{
@@ -44,7 +44,7 @@ function AboutUs() {
             IT TIME TO DISCOVER NEW FLAVORS?
           </p>
           <p
-            className="about-page__article--row-4"
+            className="about-page__article--row-big"
             style={{
               color: theme === "light" ? "#212529" : "#47482f",
             }}
@@ -59,7 +59,7 @@ function AboutUs() {
             </span>
             KITCHEN ADVENTURE STARTS HERE.
           </p>
-          <p className="about-page__article--row-5">
+          <p className="about-page__article--row">
             <span
               className="special-word"
               style={{
@@ -70,7 +70,7 @@ function AboutUs() {
             </span>
             UP FOR OUR NEWSLETTER TO STAY UPDATED.
           </p>
-          <p className="about-page__article--row-6">
+          <p className="about-page__article--row">
             <span
               className="special-word"
               style={{
@@ -91,7 +91,7 @@ function AboutUs() {
             </span>
             WITH US.
           </p>
-          <p className="about-page__article--row-7">
+          <p className="about-page__article--row">
             <span
               className="special-word"
               style={{
@@ -108,7 +108,7 @@ function AboutUs() {
               }}
             >
               {" "}
-              TODAY{" "}
+              TODAY
             </span>
             !
           </p>

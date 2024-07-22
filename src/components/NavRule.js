@@ -1,5 +1,4 @@
 import AboutUs from "./AboutUs";
-import Contacts from "./Contacts";
 import Navigation from "./Navigation";
 import RecipesPage from "./RecipesPage";
 
@@ -15,7 +14,6 @@ function NavRule() {
       <Navigation setPage={setPage} />
       <div>
         {page === "about-us" && <AboutUs />}
-        {page === "contacts" && <Contacts />}
         {page === "recipes" && <RecipesPage />}
       </div>
     </div>

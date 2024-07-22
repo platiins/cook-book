@@ -56,8 +56,7 @@
       font-family: "Overpass", sans-serif;
 
       &__input {
-        background-color: #e8e4dc;
-        border: 2px solid #727454;
+        @include boxStyle(#e8e4dc, 2px solid #727454);
         outline: #727454;
         color: #47482f;
         font-size: 25px;
@@ -77,9 +76,7 @@
       .login-btn {
         @include flex(row, center, center, 30px);
         @include fontChange("Gloria Hallelujah", cursive, 400, 2.8rem, #47482f);
-        align-self: center;
-        background-color: transparent;
-        border: none;
+        @include boxStyle(transparent, none);
 
         &:hover .login-icon {
           animation: rotate 4000ms linear infinite;
@@ -116,44 +113,33 @@
   }
 }
 
-// HEADER // NAVIGATION
-
+// HEADER
+// NAVIGATION
 .main-nav {
   position: fixed;
-  padding: 10px;
-  width: 100vw;
   z-index: 1;
-  background-color: #47482f;
-  width: 100%;
-
-  &__container {
-    padding-left: 0;
-  }
+  width: 100vw;
+  padding: 0;
 
   .home-icon {
     @include fontChange("Gloria Hallelujah", cursive, inherit, 2rem, #212529);
-    padding: 10px;
+    margin: 0.6rem 3rem;
   }
 
   .nav-link {
     @include fontChange("Overpass", sans-serif, 400, 1.2rem, #f3f3f3);
     margin-right: 5rem;
-    text-wrap: nowrap;
-  }
-
-  .navbar-nav .nav-link.active {
-    color: #f3f3f3;
   }
 }
 
+// LOGOUT BTN
+
 .logout-btn {
-  background-color: transparent;
-  border: none;
+  @include boxStyle(transparent, none);
   font-size: 1.5rem;
 
   &:hover {
     animation: float 1500ms linear infinite;
-    background-color: transparent;
   }
 
   @keyframes float {
@@ -169,18 +155,14 @@
   }
 }
 
-.nav-icons {
-  @include flex(row, center, center, 10px);
-}
+// CHNG THEME BTN
 
 .change-theme-btn {
-  background-color: transparent;
-  border: none;
+  @include boxStyle(transparent, none);
   font-size: 1.5rem;
 
   &:hover {
     animation: rotate-theme 3000ms infinite;
-    background-color: transparent;
   }
 
   @keyframes rotate-theme {
@@ -195,6 +177,136 @@
     }
   }
 }
+
+// ABOUT US PAGE
+
+.about-page {
+  @include pageSetup;
+  @include flex(row, center, start, 0);
+  padding: 10rem 2rem 3rem;
+
+  &-container {
+    @include flex(column, center, center, 0);
+    text-align: center;
+    width: 40%;
+  }
+
+  &__welcome {
+    @include fontChange("Overpass", sans-serif, 400, 1.2rem, #47482f);
+  }
+
+  &__title {
+    @include fontChange("Gloria Hallelujah", cursive, inherit, 4rem, #212529);
+    margin: 1rem 1rem 3rem;
+  }
+
+  &__article {
+    @include fontChange("Overpass", sans-serif, 400, 1.2rem, #47482f);
+    text-align: center;
+
+    &--row {
+      text-align: center;
+
+      &-big {
+        font-size: 1.5rem;
+        margin: 2.5rem 0;
+      }
+    }
+
+    .special-word {
+      font-weight: 700;
+    }
+  }
+}
+
+// REGISTER PAGE
+
+.register-page {
+  @include pageSetup;
+  @include flex(column, center, center, 7rem);
+
+  &__form {
+    width: 40%;
+    align-items: center;
+    position: relative;
+  }
+
+  &__btn {
+    width: 50%;
+    outline: none;
+    border-radius: 6px;
+    opacity: 0.7;
+    box-shadow: 0;
+
+    &:hover {
+      border: solid 2px #212529;
+      outline: none;
+      opacity: 1;
+    }
+  }
+
+  .btn-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__input {
+    font-size: 18px;
+    font-family: "Overpass", sans-serif;
+    border: solid 2px #212529;
+    padding: 7px 10px;
+    border-radius: 0;
+
+    &:focus,
+    &:hover {
+      outline: none;
+      border: solid 2px #212529;
+      box-shadow: 0 0 10px #212529;
+    }
+  }
+
+  .username-input {
+    border-radius: 10px;
+  }
+
+  .email-sign {
+    border: #212529 solid 2px;
+    border-right: 1px;
+    font-size: 18px;
+    opacity: 0.7;
+    box-sizing: content-box;
+    border-radius: 0;
+  }
+
+  .registration-confirm {
+    position: absolute;
+    top: 200px;
+    z-index: 3;
+    width: 100vw;
+
+    &__text {
+      font-size: 25px;
+      font-family: "Overpass", sans-serif;
+      text-align: center;
+      font-weight: bold;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // RECIPES PAGE
 
@@ -416,174 +528,6 @@
     &__icon {
       padding: 3px;
       font-size: 30px;
-    }
-  }
-}
-
-// ABOUT US PAGE
-
-.about-page {
-  width: 100vw;
-  height: 100vh;
-  background-color: #b4b093;
-  padding-top: 150px;
-
-  &-container {
-    display: flex;
-    flex-flow: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  &__welcome {
-    font-size: 22px;
-    font-family: "Overpass", sans-serif;
-    color: #47482f;
-    text-align: center;
-  }
-
-  &__title {
-    text-align: center;
-    font-family: "Gloria Hallelujah", cursive;
-    font-size: 75px;
-    color: #212529;
-  }
-
-  &__article {
-    font-size: 18px;
-    font-family: "Overpass", sans-serif;
-    color: #47482f;
-    width: 500px;
-    text-align: justify;
-    margin-top: 30px;
-
-    &--row {
-      text-align: center;
-
-      &-3 {
-        text-align: end;
-      }
-
-      &-4 {
-        font-size: 25px;
-        margin: 20px 0;
-        text-align: center;
-      }
-
-      &-5 {
-        text-align: center;
-        margin: 30px 0;
-      }
-
-      &-6 {
-        text-align: center;
-      }
-    }
-
-    .special-word {
-      font-weight: 700;
-    }
-  }
-}
-
-// CONTACTS PAGE
-
-.contacts-container {
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-
-  &__title {
-    margin-bottom: 50px;
-    font-size: 30px;
-    font-family: "Gloria Hallelujah", cursive;
-  }
-
-  &__text {
-    font-size: 18px;
-    font-family: "Overpass", sans-serif;
-  }
-}
-
-// REGISTER PAGE
-
-.register-page {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
-  gap: 100px;
-
-  &__form {
-    width: 40%;
-    align-items: center;
-    position: relative;
-  }
-
-  &__btn {
-    width: 50%;
-    outline: none;
-    border-radius: 6px;
-    opacity: 0.7;
-    box-shadow: 0;
-
-    &:hover {
-      border: solid 2px #212529;
-      outline: none;
-      opacity: 1;
-    }
-  }
-
-  .btn-row {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  &__input {
-    font-size: 18px;
-    font-family: "Overpass", sans-serif;
-    border: solid 2px #212529;
-    padding: 7px 10px;
-    border-radius: 0;
-
-    &:focus,
-    &:hover {
-      outline: none;
-      border: solid 2px #212529;
-      box-shadow: 0 0 10px #212529;
-    }
-  }
-
-  .username-input {
-    border-radius: 10px;
-  }
-
-  .email-sign {
-    border: #212529 solid 2px;
-    border-right: 1px;
-    font-size: 18px;
-    opacity: 0.7;
-    box-sizing: content-box;
-    border-radius: 0;
-  }
-
-  .registration-confirm {
-    position: absolute;
-    top: 200px;
-    z-index: 3;
-    width: 100vw;
-
-    &__text {
-      font-size: 25px;
-      font-family: "Overpass", sans-serif;
-      text-align: center;
-      font-weight: bold;
     }
   }
 }

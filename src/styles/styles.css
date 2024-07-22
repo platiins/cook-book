@@ -86,7 +86,6 @@
   font-weight: 400;
   font-size: 2.8rem;
   color: #47482f;
-  align-self: center;
   background-color: transparent;
   border: none;
 }
@@ -118,21 +117,16 @@
 
 .main-nav {
   position: fixed;
-  padding: 10px;
-  width: 100vw;
   z-index: 1;
-  background-color: #47482f;
-  width: 100%;
-}
-.main-nav__container {
-  padding-left: 0;
+  width: 100vw;
+  padding: 0;
 }
 .main-nav .home-icon {
   font-family: "Gloria Hallelujah", cursive;
   font-weight: inherit;
   font-size: 2rem;
   color: #212529;
-  padding: 10px;
+  margin: 0.6rem 3rem;
 }
 .main-nav .nav-link {
   font-family: "Overpass", sans-serif;
@@ -140,10 +134,6 @@
   font-size: 1.2rem;
   color: #f3f3f3;
   margin-right: 5rem;
-  text-wrap: nowrap;
-}
-.main-nav .navbar-nav .nav-link.active {
-  color: #f3f3f3;
 }
 
 .logout-btn {
@@ -153,7 +143,6 @@
 }
 .logout-btn:hover {
   animation: float 1500ms linear infinite;
-  background-color: transparent;
 }
 @keyframes float {
   0% {
@@ -167,14 +156,6 @@
   }
 }
 
-.nav-icons {
-  display: flex;
-  flex-flow: row;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-}
-
 .change-theme-btn {
   background-color: transparent;
   border: none;
@@ -182,7 +163,6 @@
 }
 .change-theme-btn:hover {
   animation: rotate-theme 3000ms infinite;
-  background-color: transparent;
 }
 @keyframes rotate-theme {
   0% {
@@ -194,6 +174,125 @@
   100% {
     transform: rotateY(360deg);
   }
+}
+
+.about-page {
+  width: 100vw;
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: start;
+  gap: 0;
+  padding: 10rem 2rem 3rem;
+}
+.about-page-container {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  text-align: center;
+  width: 40%;
+}
+.about-page__welcome {
+  font-family: "Overpass", sans-serif;
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: #47482f;
+}
+.about-page__title {
+  font-family: "Gloria Hallelujah", cursive;
+  font-weight: inherit;
+  font-size: 4rem;
+  color: #212529;
+  margin: 1rem 1rem 3rem;
+}
+.about-page__article {
+  font-family: "Overpass", sans-serif;
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: #47482f;
+  text-align: center;
+}
+.about-page__article--row {
+  text-align: center;
+}
+.about-page__article--row-big {
+  font-size: 1.5rem;
+  margin: 2.5rem 0;
+}
+.about-page__article .special-word {
+  font-weight: 700;
+}
+
+.register-page {
+  width: 100vw;
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  gap: 7rem;
+}
+.register-page__form {
+  width: 40%;
+  align-items: center;
+  position: relative;
+}
+.register-page__btn {
+  width: 50%;
+  outline: none;
+  border-radius: 6px;
+  opacity: 0.7;
+  box-shadow: 0;
+}
+.register-page__btn:hover {
+  border: solid 2px #212529;
+  outline: none;
+  opacity: 1;
+}
+.register-page .btn-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.register-page__input {
+  font-size: 18px;
+  font-family: "Overpass", sans-serif;
+  border: solid 2px #212529;
+  padding: 7px 10px;
+  border-radius: 0;
+}
+.register-page__input:focus, .register-page__input:hover {
+  outline: none;
+  border: solid 2px #212529;
+  box-shadow: 0 0 10px #212529;
+}
+.register-page .username-input {
+  border-radius: 10px;
+}
+.register-page .email-sign {
+  border: #212529 solid 2px;
+  border-right: 1px;
+  font-size: 18px;
+  opacity: 0.7;
+  box-sizing: content-box;
+  border-radius: 0;
+}
+.register-page .registration-confirm {
+  position: absolute;
+  top: 200px;
+  z-index: 3;
+  width: 100vw;
+}
+.register-page .registration-confirm__text {
+  font-size: 25px;
+  font-family: "Overpass", sans-serif;
+  text-align: center;
+  font-weight: bold;
 }
 
 .recipes-page {
@@ -389,143 +488,4 @@
 .pop-btn-container .pop-up-btn__icon {
   padding: 3px;
   font-size: 30px;
-}
-
-.about-page {
-  width: 100vw;
-  height: 100vh;
-  background-color: #b4b093;
-  padding-top: 150px;
-}
-.about-page-container {
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  justify-content: center;
-}
-.about-page__welcome {
-  font-size: 22px;
-  font-family: "Overpass", sans-serif;
-  color: #47482f;
-  text-align: center;
-}
-.about-page__title {
-  text-align: center;
-  font-family: "Gloria Hallelujah", cursive;
-  font-size: 75px;
-  color: #212529;
-}
-.about-page__article {
-  font-size: 18px;
-  font-family: "Overpass", sans-serif;
-  color: #47482f;
-  width: 500px;
-  text-align: justify;
-  margin-top: 30px;
-}
-.about-page__article--row {
-  text-align: center;
-}
-.about-page__article--row-3 {
-  text-align: end;
-}
-.about-page__article--row-4 {
-  font-size: 25px;
-  margin: 20px 0;
-  text-align: center;
-}
-.about-page__article--row-5 {
-  text-align: center;
-  margin: 30px 0;
-}
-.about-page__article--row-6 {
-  text-align: center;
-}
-.about-page__article .special-word {
-  font-weight: 700;
-}
-
-.contacts-container {
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-}
-.contacts-container__title {
-  margin-bottom: 50px;
-  font-size: 30px;
-  font-family: "Gloria Hallelujah", cursive;
-}
-.contacts-container__text {
-  font-size: 18px;
-  font-family: "Overpass", sans-serif;
-}
-
-.register-page {
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
-  gap: 100px;
-}
-.register-page__form {
-  width: 40%;
-  align-items: center;
-  position: relative;
-}
-.register-page__btn {
-  width: 50%;
-  outline: none;
-  border-radius: 6px;
-  opacity: 0.7;
-  box-shadow: 0;
-}
-.register-page__btn:hover {
-  border: solid 2px #212529;
-  outline: none;
-  opacity: 1;
-}
-.register-page .btn-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.register-page__input {
-  font-size: 18px;
-  font-family: "Overpass", sans-serif;
-  border: solid 2px #212529;
-  padding: 7px 10px;
-  border-radius: 0;
-}
-.register-page__input:focus, .register-page__input:hover {
-  outline: none;
-  border: solid 2px #212529;
-  box-shadow: 0 0 10px #212529;
-}
-.register-page .username-input {
-  border-radius: 10px;
-}
-.register-page .email-sign {
-  border: #212529 solid 2px;
-  border-right: 1px;
-  font-size: 18px;
-  opacity: 0.7;
-  box-sizing: content-box;
-  border-radius: 0;
-}
-.register-page .registration-confirm {
-  position: absolute;
-  top: 200px;
-  z-index: 3;
-  width: 100vw;
-}
-.register-page .registration-confirm__text {
-  font-size: 25px;
-  font-family: "Overpass", sans-serif;
-  text-align: center;
-  font-weight: bold;
 }/*# sourceMappingURL=styles.css.map */

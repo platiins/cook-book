@@ -41,7 +41,7 @@ function Navigation({ setPages, username, handleLogout }) {
             </Nav.Link>
             <Nav.Link
               onClick={() => setPages("recipes")}
-              href="#"
+              className="nav-link"
               style={{
                 color: theme === "light" ? " #b4b093" : "#47482f",
               }}
@@ -49,18 +49,8 @@ function Navigation({ setPages, username, handleLogout }) {
               RECIPES
             </Nav.Link>
             <Nav.Link
-              onClick={() => setPages("contacts")}
-              className="nav-link"
-              href="#"
-              style={{
-                color: theme === "light" ? " #b4b093" : "#47482f",
-              }}
-            >
-              CONTACTS
-            </Nav.Link>
-            <Nav.Link
               onClick={() => setPages("register")}
-              href="#"
+              className="nav-link"
               style={{
                 color: theme === "light" ? " #b4b093" : "#47482f",
               }}
@@ -77,7 +67,6 @@ function Navigation({ setPages, username, handleLogout }) {
           >
             <FaExchangeAlt />
           </button>
-
           <button
             className="logout-btn mb-1 ms-5"
             onClick={handleLogout}
