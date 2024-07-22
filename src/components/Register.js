@@ -281,30 +281,23 @@ function Register() {
               }}
             />
           </Form.Group>
+          <Row>
+            <button
+              type="submit"
+              className="register-page__btn register-page__input"
+              style={{
+                backgroundColor: theme === "light" ? "#47482f" : "#b4b093",
+                color: theme === "light" ? "#b4b093" : "#47482f",
+              }}
+            >
+              REGISTER
+            </button>
+          </Row>
         </Row>
-        <Row className="btn-row mt-4">
-          <button
-            type="submit"
-            className="register-page__btn register-page__input"
-            style={{
-              backgroundColor: theme === "light" ? "#47482f" : "#b4b093",
-              color: theme === "light" ? "#b4b093" : "#47482f",
-            }}
-          >
-            REGISTER
-          </button>
-        </Row>
+        {isSubmitted && (
+          <p className="registration-confirm">REGISTRATION SUCCESSFUL</p>
+        )}
       </Form>
-      {isSubmitted && (
-        <div className="registration-confirm">
-          <p
-            className="registration-confirm__text"
-            style={{ color: theme === "light" ? "#47482f" : "#b4b093" }}
-          >
-            REGISTRATION SUCCESSFUL
-          </p>
-        </div>
-      )}
     </section>
   );
 }

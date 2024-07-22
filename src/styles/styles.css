@@ -117,7 +117,7 @@
 
 .main-nav {
   position: fixed;
-  z-index: 1;
+  z-index: 4;
   width: 100vw;
   padding: 0;
 }
@@ -180,12 +180,12 @@
   width: 100vw;
   height: 100%;
   min-height: 100vh;
+  padding: 7rem 2rem 2rem;
   display: flex;
   flex-flow: row;
   justify-content: center;
   align-items: start;
   gap: 0;
-  padding: 10rem 2rem 3rem;
 }
 .about-page-container {
   display: flex;
@@ -195,6 +195,7 @@
   gap: 0;
   text-align: center;
   width: 40%;
+  margin-top: 50px;
 }
 .about-page__welcome {
   font-family: "Overpass", sans-serif;
@@ -231,6 +232,7 @@
   width: 100vw;
   height: 100%;
   min-height: 100vh;
+  padding: 7rem 2rem 2rem;
   display: flex;
   flex-flow: column;
   justify-content: center;
@@ -238,32 +240,17 @@
   gap: 7rem;
 }
 .register-page__form {
-  width: 40%;
+  padding: 0.5rem;
   align-items: center;
-  position: relative;
-}
-.register-page__btn {
-  width: 50%;
-  outline: none;
-  border-radius: 6px;
-  opacity: 0.7;
-  box-shadow: 0;
-}
-.register-page__btn:hover {
-  border: solid 2px #212529;
-  outline: none;
-  opacity: 1;
-}
-.register-page .btn-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  max-width: 600px;
 }
 .register-page__input {
-  font-size: 18px;
   font-family: "Overpass", sans-serif;
+  font-weight: 400;
+  font-size: 1.1rem;
+  color: inherit;
   border: solid 2px #212529;
-  padding: 7px 10px;
+  padding: 0.5rem;
   border-radius: 0;
 }
 .register-page__input:focus, .register-page__input:hover {
@@ -271,28 +258,31 @@
   border: solid 2px #212529;
   box-shadow: 0 0 10px #212529;
 }
-.register-page .username-input {
-  border-radius: 10px;
+.register-page .input-group .form-control:not(:focus).is-invalid {
+  z-index: 1;
 }
 .register-page .email-sign {
   border: #212529 solid 2px;
-  border-right: 1px;
-  font-size: 18px;
+  font-size: 1.1rem;
   opacity: 0.7;
-  box-sizing: content-box;
   border-radius: 0;
 }
-.register-page .registration-confirm {
-  position: absolute;
-  top: 200px;
-  z-index: 3;
-  width: 100vw;
+.register-page__btn {
+  width: 50%;
+  outline: none;
+  opacity: 0.7;
+  margin: 3rem auto;
 }
-.register-page .registration-confirm__text {
-  font-size: 25px;
+.register-page__btn:hover {
+  outline: none;
+  opacity: 1;
+}
+.register-page .registration-confirm {
   font-family: "Overpass", sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: rgba(120, 0, 0, 0.5568627451);
   text-align: center;
-  font-weight: bold;
 }
 
 .recipes-page {
