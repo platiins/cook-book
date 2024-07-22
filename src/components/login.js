@@ -1,11 +1,8 @@
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { LuLogOut } from "react-icons/lu";
 import { FaCookieBite } from "react-icons/fa";
 import App from "../App";
-
 import { useState } from "react";
-
 import "../styles/styles.scss";
 
 function Login() {
@@ -16,11 +13,11 @@ function Login() {
 
   const handleLogin = (event) => {
     event.preventDefault();
-    if (username === "foodLover666" && password === "0000") {
+    if (username === "ADMIN" && password === "0000") {
       setIsLoggedIn(true);
       setError("");
     } else {
-      setError("Invalid username or password");
+      setError("invalid username or password");
       setIsLoggedIn(false);
     }
   };
@@ -33,10 +30,7 @@ function Login() {
     <div>
       {isLoggedIn ? (
         <div>
-          <App username={username} />
-          <button className="logout-btn" onClick={handleLogout}>
-            <LuLogOut />
-          </button>
+          <App username={username} handleLogout={handleLogout} />
         </div>
       ) : (
         <div className="login-page">
@@ -66,12 +60,18 @@ function Login() {
                   onChange={(event) => setPassword(event.target.value)}
                 />
               </Form.Group>
-              <Button className="login-btn" variant="dark" type="submit">
+              <Button className="login-btn mt-3" variant="dark" type="submit">
                 LOGIN
                 <FaCookieBite className="login-icon" />
               </Button>
-              {error && <div>{error}</div>}
             </Form>
+            {error && (
+              <div className="login-error mb-0">
+                {error}
+                <p className="mb-0 mt-3">credentials to login:</p>
+                <p>login: ADMIN | password: 0000</p>
+              </div>
+            )}
           </section>
         </div>
       )}

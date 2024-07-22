@@ -1,0 +1,19 @@
+@mixin flex($flexFlow, $justifyContent, $alignItems, $flexGap) {
+  display: flex;
+  flex-flow: $flexFlow;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+  gap: $flexGap;
+}
+
+@mixin fontChange($fontFamily, $fallbackFont, $fontWeight, $fontSize, $fontColor) {
+  font-family: $fontFamily, $fallbackFont;
+  font-weight: $fontWeight;
+  font-size: $fontSize;
+  color: $fontColor;
+}
+
+@mixin fontAdjust($fontSize, $fontColor){
+    font-size: $fontSize;
+    color: $fontColor;
+}

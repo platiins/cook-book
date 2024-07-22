@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import Login from "./components/login.js";
 import "./styles/styles.scss";
+import "./styles/responsivness.scss";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

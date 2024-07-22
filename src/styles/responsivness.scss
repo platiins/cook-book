@@ -1,0 +1,16 @@
+@use "mixins" as *;
+
+@media screen and (max-width: 1500px) {
+  // LOGIN PAGE
+
+  .login-page {
+    @include flex(row, center, center, 0);
+    padding: 0;
+
+    .login-container {
+      width: 100%;
+      max-width: none;
+      background-color: rgba($color: #e8e4dc, $alpha: 0.5);
+    }
+  }
+}

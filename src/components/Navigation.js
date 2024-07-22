@@ -3,11 +3,11 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { ThemeContext } from "../context/theme";
 import { useContext } from "react";
-
 import { FaExchangeAlt } from "react-icons/fa";
+import { FiLogOut } from "react-icons/fi";
 import "../styles/styles.scss";
 
-function Navigation({ setPages, username }) {
+function Navigation({ setPages, username, handleLogout }) {
   const { theme, toggleTheme } = useContext(ThemeContext);
 
   return (
@@ -69,13 +69,23 @@ function Navigation({ setPages, username }) {
             </Nav.Link>
           </Nav>
           <button
-            className="change-theme-btn"
+            className="change-theme-btn mb-1"
             onClick={toggleTheme}
             style={{
               color: theme === "light" ? " #b4b093" : "#47482f",
             }}
           >
             <FaExchangeAlt />
+          </button>
+
+          <button
+            className="logout-btn mb-1 ms-5"
+            onClick={handleLogout}
+            style={{
+              color: theme === "light" ? " #b4b093" : "#47482f",
+            }}
+          >
+            <FiLogOut />
           </button>
         </Navbar.Collapse>
       </Container>

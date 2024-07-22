@@ -10,13 +10,17 @@ import { useState } from "react";
 import { ThemeProvider } from "./context/theme";
 import "./styles/styles.scss";
 
-function App({ username }) {
+function App({ username, handleLogout }) {
   const [page, setPages] = useState("about-us");
 
   return (
     <ThemeProvider>
       <div>
-        <Navigation setPages={setPages} username={username} />
+        <Navigation
+          setPages={setPages}
+          username={username}
+          handleLogout={handleLogout}
+        />
         {page === "about-us" && <AboutUs />}
         {page === "recipes" && <RecipesPage />}
         {page === "contacts" && <Contacts />}

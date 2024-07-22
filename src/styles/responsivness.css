@@ -1,0 +1,15 @@
+@media screen and (max-width: 1500px) {
+  .login-page {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    padding: 0;
+  }
+  .login-page .login-container {
+    width: 100%;
+    max-width: none;
+    background-color: rgba(232, 228, 220, 0.5);
+  }
+}/*# sourceMappingURL=responsivness.css.map */

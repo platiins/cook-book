@@ -1,10 +1,6 @@
 import { ThemeContext } from "../context/theme";
 import { useContext } from "react";
 
-import { GrInstagram } from "react-icons/gr";
-import { FaPinterestP } from "react-icons/fa6";
-import { BsYoutube } from "react-icons/bs";
-
 import "../styles/styles.scss";
 
 function AboutUs() {
@@ -74,17 +70,6 @@ function AboutUs() {
             </span>
             UP FOR OUR NEWSLETTER TO STAY UPDATED.
           </p>
-          <div className="sm-btn">
-            <button className="sm-btn__icon">
-              <GrInstagram />
-            </button>
-            <button className="sm-btn__icon">
-              <FaPinterestP />
-            </button>
-            <button className="sm-btn__icon">
-              <BsYoutube />
-            </button>
-          </div>
           <p className="about-page__article--row-6">
             <span
               className="special-word"
