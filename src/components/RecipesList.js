@@ -5,12 +5,14 @@ import { FaBowlFood } from "react-icons/fa6";
 import "../styles/styles.scss";
 import { ThemeContext } from "../context/theme";
 import { useContext } from "react";
+import Loader from "./Loader";
 
 function RecipesList({ handleLogout, username }) {
   const [selectedCardGroup, setSelectedCardGroup] = useState("All");
   const [counter, setCounter] = useState(0);
   const [selectedCards, setSelectedCards] = useState([]);
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const handleGroupFilterClick = (cuisine) => {
     setCounter((prevValue) => {
@@ -20,21 +22,22 @@ function RecipesList({ handleLogout, username }) {
   };
 
   useEffect(() => {
-    fetch("https://dummyjson.com/recipes")
-      .then((res) => {
+    const fetchRecipes = async () => {
+      setLoading(true);
+      try {
+        const res = await fetch("https://dummyjson.com/recipes");
         if (!res.ok) {
           throw new Error("Network issue");
         }
-        return res.json();
-      })
-      .then((json) => {
-        console.log(json.recipes);
+        const json = await res.json();
         setSelectedCards(json.recipes);
-      })
-      .catch((error) => {
-        console.log(error);
+      } catch (error) {
         setError(error.toString());
-      });
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchRecipes();
   }, []);
 
   const filteredCards =
@@ -44,30 +47,29 @@ function RecipesList({ handleLogout, username }) {
 
   const { theme } = useContext(ThemeContext);
 
+  if (loading) {
+    return <Loader />;
+  }
+
   return (
     <div
       className="recipes-page"
       style={{ backgroundColor: theme === "light" ? "#b4b093" : "#47482f" }}
     >
       <div className="filter-btns-container" id="buttons">
-        {[
-          "All",
-          "Italian",
-          "Asian",
-          "Mexican",
-          "Japanese",
-          "Indian",
-        ].map((cuisine) => (
-          <Button
-            className="filter-btns"
-            id={cuisine}
-            key={cuisine}
-            onClick={() => handleGroupFilterClick(cuisine)}
-          >
-            <FaBowlFood className="filter-btns__icon" />
-            {cuisine.toLocaleUpperCase()}
-          </Button>
-        ))}
+        {["All", "Italian", "Asian", "Mexican", "Japanese", "Indian"].map(
+          (cuisine) => (
+            <Button
+              className="filter-btns"
+              id={cuisine}
+              key={cuisine}
+              onClick={() => handleGroupFilterClick(cuisine)}
+            >
+              <FaBowlFood className="filter-btns__icon" />
+              {cuisine.toLocaleUpperCase()}
+            </Button>
+          )
+        )}
       </div>
       {error && <div className="text-danger">Error</div>}
       <ul className="recipes-list">

@@ -28,6 +28,13 @@
   overflow-x: hidden;
 }
 
+// LOADER
+
+.loader-container {
+  @include flex(row, center, center, 0);
+  @include pageSetup;
+}
+
 // LOGIN PAGE
 
 .login-page {
