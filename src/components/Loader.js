@@ -15,13 +15,13 @@ function Loader() {
     >
       <Grid
         visible={true}
-        height="80"
-        width="80"
-        color="#780000"
+        height="70"
+        width="70"
         ariaLabel="grid-loading"
-        radius="12.5"
+        radius="11"
         wrapperStyle={{}}
         wrapperClass="grid-wrapper"
+        color="#212529"
       />
     </div>
   );

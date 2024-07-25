@@ -5,11 +5,69 @@
     justify-content: center;
     align-items: center;
     gap: 0;
-    padding: 0;
   }
   .login-page .login-container {
     width: 100%;
     max-width: none;
     background-color: rgba(232, 228, 220, 0.5);
+  }
+}
+@media screen and (max-width: 1000px) {
+  .navbar-collapse {
+    padding: 10px 20px 20px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .login-page .login-container {
+    gap: 15px;
+  }
+  .login-page .login-container .admin-title {
+    font-size: 3rem;
+  }
+  .login-page .login-container .login-form {
+    gap: 20px;
+  }
+  .login-page .login-container .login-form__input {
+    font-size: 1.1rem;
+    padding: 10px 20px;
+    width: 300px;
+  }
+  .login-page .login-container .login-form__label {
+    font-size: 1.3rem;
+  }
+  .login-page .login-container .login-form .login-btn {
+    font-size: 1.7rem;
+  }
+  .about-page-container {
+    margin-top: 15px;
+  }
+  .about-page__welcome {
+    font-size: 0.8rem;
+  }
+  .about-page__title {
+    font-size: 2rem;
+    margin: 0.5rem 1rem 2rem;
+  }
+  .about-page__article {
+    font-size: 0.8rem;
+  }
+  .about-page__article--row-big {
+    font-size: 1rem;
+    margin: 2rem 0;
+  }
+  .popup-list {
+    font-size: 0.8rem;
+  }
+  .popup__content--list {
+    padding: 0 20px 20px;
+  }
+  .popup__content--btn {
+    font-size: 1.3rem;
+  }
+  .popup__content .btns-container {
+    padding: 15px 15px 0px;
+  }
+  .popup__content .popup-title {
+    font-size: 1.2rem;
   }
 }/*# sourceMappingURL=responsivness.css.map */

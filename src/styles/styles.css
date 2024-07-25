@@ -21,18 +21,6 @@
   overflow-x: hidden;
 }
 
-.loader-container {
-  display: flex;
-  flex-flow: row;
-  justify-content: center;
-  align-items: center;
-  gap: 0;
-  width: 100vw;
-  height: 100%;
-  min-height: 100vh;
-  padding: 7rem 2rem 2rem;
-}
-
 .login-page {
   display: flex;
   flex-flow: row;
@@ -42,7 +30,7 @@
   background: #47482f left no-repeat url(../img/hero-img-6.jpg);
   background-size: cover;
   height: 100vh;
-  padding: 100px;
+  padding: 100px 0 50px;
 }
 .login-page .login-container {
   display: flex;
@@ -52,14 +40,14 @@
   gap: 30px;
   width: 70%;
   max-width: 700px;
-  height: 100vh;
+  height: 90vh;
   color: #47482f;
-  padding: 50px;
 }
 .login-page .login-container .admin-title {
   font-family: "Gloria Hallelujah", cursive;
   font-size: 5rem;
   text-align: center;
+  margin-bottom: 30px;
 }
 .login-page .login-container .login-form {
   display: flex;
@@ -206,7 +194,8 @@
   align-items: center;
   gap: 0;
   text-align: center;
-  width: 40%;
+  width: 90%;
+  max-width: 700px;
   margin-top: 50px;
 }
 .about-page__welcome {
@@ -297,6 +286,18 @@
   text-align: center;
 }
 
+.loader-container {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
+  width: 100vw;
+  height: 100%;
+  min-height: 100vh;
+  padding: 7rem 2rem 2rem;
+}
+
 .recipes-page {
   width: 100vw;
   height: 100%;
@@ -316,7 +317,7 @@
   justify-content: center;
   align-items: center;
   gap: 10px 10px;
-  padding: 20px 50px 50px;
+  padding: 20px 20px 50px;
   width: 100%;
 }
 .recipes-page .filter-btns-container .filter-btns {
@@ -348,7 +349,7 @@
   align-items: center;
   gap: 70px 70px;
   list-style: none;
-  padding: 20px 100px;
+  padding: 20px 10px;
 }
 
 .recipe-card {
@@ -383,20 +384,20 @@
   gap: 0;
 }
 .recipe-card__container .recipe-card-icon {
-  font-size: 30px;
+  font-size: 1.7rem;
   margin: 0 5px;
   padding-bottom: 5px;
 }
 .recipe-card__container--title {
-  text-align: center;
   font-family: "Gloria Hallelujah", cursive;
-  font-size: 25px;
-  margin: 20px 10px;
+  font-weight: 400;
+  font-size: 1.5rem;
+  color: #212529;
+  text-align: center;
+  margin: 10px 10px 15px;
   text-wrap: balance;
-  vertical-align: middle;
   align-content: center;
   height: 70px;
-  color: #212529;
 }
 .recipe-card__container--img {
   margin-top: 10px;
@@ -409,29 +410,36 @@
 }
 .recipe-card__container .btns-container {
   display: flex;
+  flex-flow: row;
   justify-content: center;
-  gap: 50px;
   align-items: center;
-  margin-bottom: 20px;
+  gap: 50px;
 }
 .recipe-card__details {
   display: flex;
-  align-items: center;
+  flex-flow: row;
   justify-content: space-evenly;
+  align-items: center;
   gap: 15px;
-  padding: 5px 10px;
+  padding: 25px 10px 5px;
 }
 .recipe-card__details section {
   display: flex;
   flex-flow: column;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+  gap: 0;
 }
 .recipe-card__details section p {
   margin: 0;
 }
 
 .popup {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0;
   position: fixed;
   top: 0;
   left: 0;
@@ -439,30 +447,32 @@
   height: 100vh;
   z-index: 3;
   background-color: rgba(33, 37, 41, 0.7);
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 .popup #ingred-content {
-  width: 40%;
+  width: 80%;
+  max-width: 700px;
 }
 .popup__content {
   background-image: url(../img/IMG_3284.JPG);
   background-size: cover;
   width: 60%;
+  max-width: 1000px;
   box-shadow: 0 0 20px #212529;
   color: #47482f;
 }
 .popup__content .btns-container {
   display: flex;
+  flex-flow: row;
   justify-content: space-between;
   align-items: center;
+  gap: 0;
   padding: 20px 30px 0px;
   margin: 0;
 }
 .popup__content--btn {
-  font-size: 35px;
+  font-size: 1.8rem;
   color: #47482f;
+  background-color: transparent;
   border: none;
   padding: 0;
 }
@@ -470,14 +480,14 @@
   opacity: 0.7;
 }
 .popup__content .popup-title {
-  text-align: center;
   font-family: "Gloria Hallelujah", cursive;
-  font-size: 30px;
+  font-weight: 400;
+  font-size: 1.7rem;
   color: #212529;
-  margin: 0 30px 30px;
+  text-align: center;
 }
 .popup__content--list {
-  font-size: 20px;
+  font-size: 1.2rem;
   padding: 0 50px 50px;
 }
 
@@ -486,9 +496,9 @@
 }
 .pop-btn-container .pop-up-btn {
   background-color: transparent;
-  color: inherit;
-  font-size: 20px;
   border: #212121 solid 2px;
+  font-size: 1.2rem;
+  color: inherit;
   border-radius: 0;
   width: 100%;
 }
@@ -497,5 +507,5 @@
 }
 .pop-btn-container .pop-up-btn__icon {
   padding: 3px;
-  font-size: 30px;
+  font-size: 1.7rem;
 }/*# sourceMappingURL=styles.css.map */

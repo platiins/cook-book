@@ -1,13 +1,14 @@
 import RecipeCard from "./RecipeCard";
-import Button from "react-bootstrap/esm/Button";
-import { useState, useEffect } from "react";
-import { FaBowlFood } from "react-icons/fa6";
-import "../styles/styles.scss";
-import { ThemeContext } from "../context/theme";
-import { useContext } from "react";
 import Loader from "./Loader";
 
-function RecipesList({ handleLogout, username }) {
+import { useState, useEffect, useContext } from "react";
+import { ThemeContext } from "../context/theme";
+import { FaBowlFood } from "react-icons/fa6";
+
+import Button from "react-bootstrap/esm/Button";
+import "../styles/styles.scss";
+
+function RecipesList() {
   const [selectedCardGroup, setSelectedCardGroup] = useState("All");
   const [counter, setCounter] = useState(0);
   const [selectedCards, setSelectedCards] = useState([]);

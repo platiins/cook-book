@@ -5,12 +5,101 @@
 
   .login-page {
     @include flex(row, center, center, 0);
-    padding: 0;
 
     .login-container {
       width: 100%;
       max-width: none;
       background-color: rgba($color: #e8e4dc, $alpha: 0.5);
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .navbar-collapse {
+    padding: 10px 20px 20px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  // LOGIN PAGE
+
+  .login-page {
+    .login-container {
+      gap: 15px;
+
+      .admin-title {
+        font-size: 3rem;
+      }
+
+      .login-form {
+        gap: 20px;
+
+        &__input {
+          font-size: 1.1rem;
+          padding: 10px 20px;
+          width: 300px;
+        }
+
+        &__label {
+          font-size: 1.3rem;
+        }
+
+        .login-btn {
+          font-size: 1.7rem;
+        }
+      }
+    }
+  }
+
+  // ABOUT US PAGE
+
+  .about-page {
+    &-container {
+      margin-top: 15px;
+    }
+
+    &__welcome {
+      font-size: 0.8rem;
+    }
+
+    &__title {
+      font-size: 2rem;
+      margin: 0.5rem 1rem 2rem;
+    }
+
+    &__article {
+      font-size: 0.8rem;
+
+      &--row {
+        &-big {
+          font-size: 1rem;
+          margin: 2rem 0;
+        }
+      }
+    }
+  }
+
+  // RECIPES // CARD POPUP
+
+  .popup-list {
+    font-size: 0.8rem;
+  }
+
+  .popup__content {
+    &--list {
+      padding: 0 20px 20px;
+    }
+
+    &--btn {
+      font-size: 1.3rem;
+    }
+
+    .btns-container {
+      padding: 15px 15px 0px;
+    }
+
+    .popup-title {
+      font-size: 1.2rem;
     }
   }
 }

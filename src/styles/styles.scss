@@ -28,13 +28,6 @@
   overflow-x: hidden;
 }
 
-// LOADER
-
-.loader-container {
-  @include flex(row, center, center, 0);
-  @include pageSetup;
-}
-
 // LOGIN PAGE
 
 .login-page {
@@ -42,20 +35,20 @@
   background: #47482f left no-repeat url(../img/hero-img-6.jpg);
   background-size: cover;
   height: 100vh;
-  padding: 100px;
+  padding: 100px 0 50px;
 
   .login-container {
     @include flex(column, center, center, 30px);
     width: 70%;
     max-width: 700px;
-    height: 100vh;
+    height: 90vh;
     color: #47482f;
-    padding: 50px;
 
     .admin-title {
       font-family: "Gloria Hallelujah", cursive;
       font-size: 5rem;
       text-align: center;
+      margin-bottom: 30px;
     }
 
     .login-form {
@@ -194,7 +187,8 @@
   &-container {
     @include flex(column, center, center, 0);
     text-align: center;
-    width: 40%;
+    width: 90%;
+    max-width: 700px;
     margin-top: 50px;
   }
 
@@ -281,6 +275,13 @@
   }
 }
 
+// LOADER
+
+.loader-container {
+  @include flex(row, center, center, 0);
+  @include pageSetup;
+}
+
 // RECIPES PAGE
 
 .recipes-page {
@@ -291,7 +292,7 @@
 
   .filter-btns-container {
     @include flex(row wrap, center, center, 10px 10px);
-    padding: 20px 50px 50px;
+    padding: 20px 20px 50px;
     width: 100%;
 
     .filter-btns {
@@ -315,7 +316,7 @@
   .recipes-list {
     @include flex(row wrap, center, center, 70px 70px);
     list-style: none;
-    padding: 20px 100px;
+    padding: 20px 10px;
   }
 }
 
@@ -342,21 +343,18 @@
     }
 
     .recipe-card-icon {
-      font-size: 30px;
+      font-size: 1.7rem;
       margin: 0 5px;
       padding-bottom: 5px;
     }
 
     &--title {
+      @include fontChange("Gloria Hallelujah", cursive, 400, 1.5rem, #212529);
       text-align: center;
-      font-family: "Gloria Hallelujah", cursive;
-      font-size: 25px;
-      margin: 20px 10px;
+      margin: 10px 10px 15px;
       text-wrap: balance;
-      vertical-align: middle;
       align-content: center;
       height: 70px;
-      color: #212529;
     }
 
     &--img {
@@ -369,26 +367,16 @@
     }
 
     .btns-container {
-      display: flex;
-      justify-content: center;
-      gap: 50px;
-      align-items: center;
-      margin-bottom: 20px;
+      @include flex(row, center, center, 50px);
     }
   }
 
   &__details {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    gap: 15px;
-    padding: 5px 10px;
+    @include flex(row, space-evenly, center, 15px);
+    padding: 25px 10px 5px;
 
     section {
-      display: flex;
-      flex-flow: column;
-      align-items: center;
-      justify-content: center;
+      @include flex(column, center, center, 0);
 
       p {
         margin: 0;
@@ -400,6 +388,7 @@
 // RECIPES // CARD POPUP
 
 .popup {
+  @include flex(row, center, center, 0);
   position: fixed;
   top: 0;
   left: 0;
@@ -407,33 +396,29 @@
   height: 100vh;
   z-index: 3;
   background-color: rgba(33, 37, 41, 0.7);
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
   #ingred-content {
-    width: 40%;
+    width: 80%;
+    max-width: 700px;
   }
 
   &__content {
     background-image: url(../img/IMG_3284.JPG);
     background-size: cover;
     width: 60%;
+    max-width: 1000px;
     box-shadow: 0 0 20px #212529;
     color: #47482f;
 
     .btns-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+      @include flex(row, space-between, center, 0);
       padding: 20px 30px 0px;
       margin: 0;
     }
 
     &--btn {
-      font-size: 35px;
-      color: #47482f;
-      border: none;
+      @include fontAdjust(1.8rem, #47482f);
+      @include boxStyle(transparent, none);
       padding: 0;
 
       &:hover {
@@ -442,15 +427,12 @@
     }
 
     .popup-title {
+      @include fontChange("Gloria Hallelujah", cursive, 400, 1.7rem, #212529);
       text-align: center;
-      font-family: "Gloria Hallelujah", cursive;
-      font-size: 30px;
-      color: #212529;
-      margin: 0 30px 30px;
     }
 
     &--list {
-      font-size: 20px;
+      font-size: 1.2rem;
       padding: 0 50px 50px;
     }
   }
@@ -458,11 +440,10 @@
 
 .pop-btn-container {
   width: 30%;
+
   .pop-up-btn {
-    background-color: transparent;
-    color: inherit;
-    font-size: 20px;
-    border: #212121 solid 2px;
+    @include boxStyle(transparent, #212121 solid 2px);
+    @include fontAdjust(1.2rem, inherit);
     border-radius: 0;
     width: 100%;
 
@@ -472,7 +453,7 @@
 
     &__icon {
       padding: 3px;
-      font-size: 30px;
+      font-size: 1.7rem;
     }
   }
 }

@@ -53,7 +53,7 @@ function RecipeCard({ recipe }) {
           <IngredBtn
             allIngred={
               <div>
-                <h3 className="popup-title">{recipe.name}</h3>
+                <h3 className="popup-title mb-4 mt-2">{recipe.name}</h3>
                 <ul className="popup-list">
                   {recipe.ingredients.map((ingredient) => (
                     <li key={ingredient.id}>{ingredient}</li>
@@ -65,7 +65,7 @@ function RecipeCard({ recipe }) {
           <InstructBtn
             wholeInstruct={
               <div>
-                <h3 className="popup-title">{recipe.name}</h3>
+                <h3 className="popup-title mb-4 mt-2">{recipe.name}</h3>
                 <ol className="popup-list" id="instruct-list">
                   {recipe.instructions.map((instruction) => (
                     <li key={instruction.id}>{instruction}</li>
