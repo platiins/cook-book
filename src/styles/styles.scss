@@ -291,7 +291,7 @@
   background-image: none;
 
   .filter-btns-container {
-    @include flex(row wrap, center, center, 10px 10px);
+    @include flex(row wrap, center, center, 10px 20px);
     padding: 20px 20px 50px;
     width: 100%;
 
@@ -299,8 +299,6 @@
       @include flex(column, center, center, 10px);
       @include fontChange("Overpass", sans-serif, 400, 1.3rem, #212529);
       @include boxStyle(transparent, none);
-      width: 10%;
-      min-width: 100px;
 
       &:hover .filter-btns__icon {
         transform: scale(1.5);
@@ -393,7 +391,8 @@
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
   z-index: 3;
   background-color: rgba(33, 37, 41, 0.7);
 
